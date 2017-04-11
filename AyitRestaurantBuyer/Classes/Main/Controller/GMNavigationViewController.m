@@ -1,24 +1,22 @@
 //
-//  GMHomeViewController.m
+//  GMNavigationViewController.m
 //  AyitRestaurantBuyer
 //
 //  Created by MAMIAN on 2017/4/11.
 //  Copyright © 2017年 Gaofei Ma. All rights reserved.
 //
 
-#import "GMHomeViewController.h"
+#import "GMNavigationViewController.h"
 
-@interface GMHomeViewController ()
+@interface GMNavigationViewController ()
 
 @end
 
-@implementation GMHomeViewController
+@implementation GMNavigationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.title = @"首页";
-    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {

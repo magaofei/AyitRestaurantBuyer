@@ -7,6 +7,12 @@
 //
 
 #import "GMTabBarViewController.h"
+#import "GMNavigationViewController.h"
+
+#import "GMHomeViewController.h"
+#import "GMNearbyViewController.h"
+#import "GMOrderManagementTableViewController.h"
+#import "GMMyViewController.h"
 
 @interface GMTabBarViewController ()
 
@@ -24,10 +30,34 @@
 // 子控制器
 - (void)initAllTabBarController {
     // 首页
+    GMHomeViewController *homeVC = [[GMHomeViewController alloc] init];
+    GMNavigationViewController *homeNav = [[GMNavigationViewController alloc]
+                                           initWithRootViewController:homeVC];
+    homeNav.tabBarItem.title = @"首页";
+    
     // 附近
+    GMNearbyViewController *nearbyVC = [[GMNearbyViewController alloc] init];
+    GMNavigationViewController *nearbyNav = [[GMNavigationViewController alloc]
+                                         initWithRootViewController:nearbyVC];
+    nearbyNav.tabBarItem.title = @"附近商家";
+    
     // 订单管理
+    GMOrderManagementTableViewController *orderManagementVC = [[GMOrderManagementTableViewController alloc] init];
+    GMNavigationViewController *orderManagementNav = [[GMNavigationViewController alloc]
+                                         initWithRootViewController:orderManagementVC];
+    orderManagementNav.tabBarItem.title = @"订单";
+    
     // 我的
     
+    GMMyViewController *myVC = [[GMMyViewController alloc] init];
+    GMNavigationViewController *myNav = [[GMNavigationViewController alloc]
+                                         initWithRootViewController:myVC];
+    myNav.tabBarItem.title = @"我的";
+    
+    [self addChildViewController:homeNav];
+    [self addChildViewController:nearbyNav];
+    [self addChildViewController:orderManagementNav];
+    [self addChildViewController:myNav];
     
     
 }

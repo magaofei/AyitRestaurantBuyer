@@ -18,6 +18,7 @@
 		227C01C31E9CE07000E05BF9 /* GMMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01C21E9CE07000E05BF9 /* GMMyViewController.m */; };
 		227C01C61E9CE08C00E05BF9 /* GMNearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01C51E9CE08C00E05BF9 /* GMNearbyViewController.m */; };
 		227C01C91E9CE0A600E05BF9 /* GMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01C81E9CE0A600E05BF9 /* GMHomeViewController.m */; };
+		227C01CC1E9CE24C00E05BF9 /* GMNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01CB1E9CE24C00E05BF9 /* GMNavigationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		227C01C51E9CE08C00E05BF9 /* GMNearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMNearbyViewController.m; path = Classes/Nearby/Controller/GMNearbyViewController.m; sourceTree = "<group>"; };
 		227C01C71E9CE0A600E05BF9 /* GMHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMHomeViewController.h; path = Classes/Home/Controller/GMHomeViewController.h; sourceTree = "<group>"; };
 		227C01C81E9CE0A600E05BF9 /* GMHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMHomeViewController.m; path = Classes/Home/Controller/GMHomeViewController.m; sourceTree = "<group>"; };
+		227C01CA1E9CE24C00E05BF9 /* GMNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMNavigationViewController.h; path = Classes/Main/Controller/GMNavigationViewController.h; sourceTree = "<group>"; };
+		227C01CB1E9CE24C00E05BF9 /* GMNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMNavigationViewController.m; path = Classes/Main/Controller/GMNavigationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,10 +155,10 @@
 		227C01A11E9CDBB300E05BF9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				227C01B01E9CDCAE00E05BF9 /* My */,
-				227C01AF1E9CDCA300E05BF9 /* OrderManagement */,
-				227C01AE1E9CDC9300E05BF9 /* Nearby */,
 				227C01AD1E9CDC5C00E05BF9 /* Home */,
+				227C01AE1E9CDC9300E05BF9 /* Nearby */,
+				227C01AF1E9CDCA300E05BF9 /* OrderManagement */,
+				227C01B01E9CDCAE00E05BF9 /* My */,
 				227C01A31E9CDBD000E05BF9 /* Main */,
 			);
 			name = Classes;
@@ -181,6 +184,8 @@
 		227C01A71E9CDC1200E05BF9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				227C01CA1E9CE24C00E05BF9 /* GMNavigationViewController.h */,
+				227C01CB1E9CE24C00E05BF9 /* GMNavigationViewController.m */,
 				227C01AA1E9CDC3A00E05BF9 /* GMTabBarViewController.h */,
 				227C01AB1E9CDC3A00E05BF9 /* GMTabBarViewController.m */,
 			);
@@ -471,6 +476,7 @@
 			files = (
 				227C01AC1E9CDC3A00E05BF9 /* GMTabBarViewController.m in Sources */,
 				227C01C31E9CE07000E05BF9 /* GMMyViewController.m in Sources */,
+				227C01CC1E9CE24C00E05BF9 /* GMNavigationViewController.m in Sources */,
 				227C01C01E9CDFFF00E05BF9 /* GMOrderManagementTableViewController.m in Sources */,
 				227C01C61E9CE08C00E05BF9 /* GMNearbyViewController.m in Sources */,
 				227C01731E9CDB9200E05BF9 /* AppDelegate.m in Sources */,
