@@ -1,0 +1,541 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		227C01701E9CDB9200E05BF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C016F1E9CDB9200E05BF9 /* main.m */; };
+		227C01731E9CDB9200E05BF9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01721E9CDB9200E05BF9 /* AppDelegate.m */; };
+		227C01761E9CDB9200E05BF9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01751E9CDB9200E05BF9 /* ViewController.m */; };
+		227C01791E9CDB9200E05BF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227C01771E9CDB9200E05BF9 /* Main.storyboard */; };
+		227C017B1E9CDB9200E05BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227C017A1E9CDB9200E05BF9 /* Assets.xcassets */; };
+		227C017E1E9CDB9200E05BF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227C017C1E9CDB9200E05BF9 /* LaunchScreen.storyboard */; };
+		227C01891E9CDB9200E05BF9 /* AyitRestaurantBuyerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01881E9CDB9200E05BF9 /* AyitRestaurantBuyerTests.m */; };
+		227C01941E9CDB9200E05BF9 /* AyitRestaurantBuyerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01931E9CDB9200E05BF9 /* AyitRestaurantBuyerUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		227C01851E9CDB9200E05BF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 227C01631E9CDB9200E05BF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 227C016A1E9CDB9200E05BF9;
+			remoteInfo = AyitRestaurantBuyer;
+		};
+		227C01901E9CDB9200E05BF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 227C01631E9CDB9200E05BF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 227C016A1E9CDB9200E05BF9;
+			remoteInfo = AyitRestaurantBuyer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		227C016B1E9CDB9200E05BF9 /* AyitRestaurantBuyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AyitRestaurantBuyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		227C016F1E9CDB9200E05BF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		227C01711E9CDB9200E05BF9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		227C01721E9CDB9200E05BF9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		227C01741E9CDB9200E05BF9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		227C01751E9CDB9200E05BF9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		227C01781E9CDB9200E05BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		227C017A1E9CDB9200E05BF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		227C017D1E9CDB9200E05BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		227C017F1E9CDB9200E05BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		227C01841E9CDB9200E05BF9 /* AyitRestaurantBuyerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AyitRestaurantBuyerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		227C01881E9CDB9200E05BF9 /* AyitRestaurantBuyerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AyitRestaurantBuyerTests.m; sourceTree = "<group>"; };
+		227C018A1E9CDB9200E05BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		227C018F1E9CDB9200E05BF9 /* AyitRestaurantBuyerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AyitRestaurantBuyerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		227C01931E9CDB9200E05BF9 /* AyitRestaurantBuyerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AyitRestaurantBuyerUITests.m; sourceTree = "<group>"; };
+		227C01951E9CDB9200E05BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		227C01681E9CDB9200E05BF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		227C01811E9CDB9200E05BF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		227C018C1E9CDB9200E05BF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		227C01621E9CDB9200E05BF9 = {
+			isa = PBXGroup;
+			children = (
+				227C016D1E9CDB9200E05BF9 /* AyitRestaurantBuyer */,
+				227C01871E9CDB9200E05BF9 /* AyitRestaurantBuyerTests */,
+				227C01921E9CDB9200E05BF9 /* AyitRestaurantBuyerUITests */,
+				227C016C1E9CDB9200E05BF9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		227C016C1E9CDB9200E05BF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				227C016B1E9CDB9200E05BF9 /* AyitRestaurantBuyer.app */,
+				227C01841E9CDB9200E05BF9 /* AyitRestaurantBuyerTests.xctest */,
+				227C018F1E9CDB9200E05BF9 /* AyitRestaurantBuyerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		227C016D1E9CDB9200E05BF9 /* AyitRestaurantBuyer */ = {
+			isa = PBXGroup;
+			children = (
+				227C01711E9CDB9200E05BF9 /* AppDelegate.h */,
+				227C01721E9CDB9200E05BF9 /* AppDelegate.m */,
+				227C01741E9CDB9200E05BF9 /* ViewController.h */,
+				227C01751E9CDB9200E05BF9 /* ViewController.m */,
+				227C01771E9CDB9200E05BF9 /* Main.storyboard */,
+				227C017A1E9CDB9200E05BF9 /* Assets.xcassets */,
+				227C017C1E9CDB9200E05BF9 /* LaunchScreen.storyboard */,
+				227C017F1E9CDB9200E05BF9 /* Info.plist */,
+				227C016E1E9CDB9200E05BF9 /* Supporting Files */,
+			);
+			path = AyitRestaurantBuyer;
+			sourceTree = "<group>";
+		};
+		227C016E1E9CDB9200E05BF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				227C016F1E9CDB9200E05BF9 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		227C01871E9CDB9200E05BF9 /* AyitRestaurantBuyerTests */ = {
+			isa = PBXGroup;
+			children = (
+				227C01881E9CDB9200E05BF9 /* AyitRestaurantBuyerTests.m */,
+				227C018A1E9CDB9200E05BF9 /* Info.plist */,
+			);
+			path = AyitRestaurantBuyerTests;
+			sourceTree = "<group>";
+		};
+		227C01921E9CDB9200E05BF9 /* AyitRestaurantBuyerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				227C01931E9CDB9200E05BF9 /* AyitRestaurantBuyerUITests.m */,
+				227C01951E9CDB9200E05BF9 /* Info.plist */,
+			);
+			path = AyitRestaurantBuyerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		227C016A1E9CDB9200E05BF9 /* AyitRestaurantBuyer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 227C01981E9CDB9200E05BF9 /* Build configuration list for PBXNativeTarget "AyitRestaurantBuyer" */;
+			buildPhases = (
+				227C01671E9CDB9200E05BF9 /* Sources */,
+				227C01681E9CDB9200E05BF9 /* Frameworks */,
+				227C01691E9CDB9200E05BF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AyitRestaurantBuyer;
+			productName = AyitRestaurantBuyer;
+			productReference = 227C016B1E9CDB9200E05BF9 /* AyitRestaurantBuyer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		227C01831E9CDB9200E05BF9 /* AyitRestaurantBuyerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 227C019B1E9CDB9200E05BF9 /* Build configuration list for PBXNativeTarget "AyitRestaurantBuyerTests" */;
+			buildPhases = (
+				227C01801E9CDB9200E05BF9 /* Sources */,
+				227C01811E9CDB9200E05BF9 /* Frameworks */,
+				227C01821E9CDB9200E05BF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				227C01861E9CDB9200E05BF9 /* PBXTargetDependency */,
+			);
+			name = AyitRestaurantBuyerTests;
+			productName = AyitRestaurantBuyerTests;
+			productReference = 227C01841E9CDB9200E05BF9 /* AyitRestaurantBuyerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		227C018E1E9CDB9200E05BF9 /* AyitRestaurantBuyerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 227C019E1E9CDB9200E05BF9 /* Build configuration list for PBXNativeTarget "AyitRestaurantBuyerUITests" */;
+			buildPhases = (
+				227C018B1E9CDB9200E05BF9 /* Sources */,
+				227C018C1E9CDB9200E05BF9 /* Frameworks */,
+				227C018D1E9CDB9200E05BF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				227C01911E9CDB9200E05BF9 /* PBXTargetDependency */,
+			);
+			name = AyitRestaurantBuyerUITests;
+			productName = AyitRestaurantBuyerUITests;
+			productReference = 227C018F1E9CDB9200E05BF9 /* AyitRestaurantBuyerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		227C01631E9CDB9200E05BF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Gaofei Ma";
+				TargetAttributes = {
+					227C016A1E9CDB9200E05BF9 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = N5G28WF2Y2;
+						ProvisioningStyle = Automatic;
+					};
+					227C01831E9CDB9200E05BF9 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = N5G28WF2Y2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 227C016A1E9CDB9200E05BF9;
+					};
+					227C018E1E9CDB9200E05BF9 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = N5G28WF2Y2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 227C016A1E9CDB9200E05BF9;
+					};
+				};
+			};
+			buildConfigurationList = 227C01661E9CDB9200E05BF9 /* Build configuration list for PBXProject "AyitRestaurantBuyer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 227C01621E9CDB9200E05BF9;
+			productRefGroup = 227C016C1E9CDB9200E05BF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				227C016A1E9CDB9200E05BF9 /* AyitRestaurantBuyer */,
+				227C01831E9CDB9200E05BF9 /* AyitRestaurantBuyerTests */,
+				227C018E1E9CDB9200E05BF9 /* AyitRestaurantBuyerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		227C01691E9CDB9200E05BF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				227C017E1E9CDB9200E05BF9 /* LaunchScreen.storyboard in Resources */,
+				227C017B1E9CDB9200E05BF9 /* Assets.xcassets in Resources */,
+				227C01791E9CDB9200E05BF9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		227C01821E9CDB9200E05BF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		227C018D1E9CDB9200E05BF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		227C01671E9CDB9200E05BF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				227C01761E9CDB9200E05BF9 /* ViewController.m in Sources */,
+				227C01731E9CDB9200E05BF9 /* AppDelegate.m in Sources */,
+				227C01701E9CDB9200E05BF9 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		227C01801E9CDB9200E05BF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				227C01891E9CDB9200E05BF9 /* AyitRestaurantBuyerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		227C018B1E9CDB9200E05BF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				227C01941E9CDB9200E05BF9 /* AyitRestaurantBuyerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		227C01861E9CDB9200E05BF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 227C016A1E9CDB9200E05BF9 /* AyitRestaurantBuyer */;
+			targetProxy = 227C01851E9CDB9200E05BF9 /* PBXContainerItemProxy */;
+		};
+		227C01911E9CDB9200E05BF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 227C016A1E9CDB9200E05BF9 /* AyitRestaurantBuyer */;
+			targetProxy = 227C01901E9CDB9200E05BF9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		227C01771E9CDB9200E05BF9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				227C01781E9CDB9200E05BF9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		227C017C1E9CDB9200E05BF9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				227C017D1E9CDB9200E05BF9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		227C01961E9CDB9200E05BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		227C01971E9CDB9200E05BF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		227C01991E9CDB9200E05BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N5G28WF2Y2;
+				INFOPLIST_FILE = AyitRestaurantBuyer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.magaofei.AyitRestaurantBuyer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		227C019A1E9CDB9200E05BF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N5G28WF2Y2;
+				INFOPLIST_FILE = AyitRestaurantBuyer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.magaofei.AyitRestaurantBuyer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		227C019C1E9CDB9200E05BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = N5G28WF2Y2;
+				INFOPLIST_FILE = AyitRestaurantBuyerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.magaofei.AyitRestaurantBuyerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AyitRestaurantBuyer.app/AyitRestaurantBuyer";
+			};
+			name = Debug;
+		};
+		227C019D1E9CDB9200E05BF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = N5G28WF2Y2;
+				INFOPLIST_FILE = AyitRestaurantBuyerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.magaofei.AyitRestaurantBuyerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AyitRestaurantBuyer.app/AyitRestaurantBuyer";
+			};
+			name = Release;
+		};
+		227C019F1E9CDB9200E05BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = N5G28WF2Y2;
+				INFOPLIST_FILE = AyitRestaurantBuyerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.magaofei.AyitRestaurantBuyerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = AyitRestaurantBuyer;
+			};
+			name = Debug;
+		};
+		227C01A01E9CDB9200E05BF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = N5G28WF2Y2;
+				INFOPLIST_FILE = AyitRestaurantBuyerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.magaofei.AyitRestaurantBuyerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = AyitRestaurantBuyer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		227C01661E9CDB9200E05BF9 /* Build configuration list for PBXProject "AyitRestaurantBuyer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				227C01961E9CDB9200E05BF9 /* Debug */,
+				227C01971E9CDB9200E05BF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		227C01981E9CDB9200E05BF9 /* Build configuration list for PBXNativeTarget "AyitRestaurantBuyer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				227C01991E9CDB9200E05BF9 /* Debug */,
+				227C019A1E9CDB9200E05BF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		227C019B1E9CDB9200E05BF9 /* Build configuration list for PBXNativeTarget "AyitRestaurantBuyerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				227C019C1E9CDB9200E05BF9 /* Debug */,
+				227C019D1E9CDB9200E05BF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		227C019E1E9CDB9200E05BF9 /* Build configuration list for PBXNativeTarget "AyitRestaurantBuyerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				227C019F1E9CDB9200E05BF9 /* Debug */,
+				227C01A01E9CDB9200E05BF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 227C01631E9CDB9200E05BF9 /* Project object */;
+}
