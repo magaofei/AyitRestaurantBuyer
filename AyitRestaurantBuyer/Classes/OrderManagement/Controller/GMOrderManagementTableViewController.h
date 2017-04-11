@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  GMOrderManagementTableViewController.h
 //  AyitRestaurantBuyer
 //
 //  Created by MAMIAN on 2017/4/11.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface GMOrderManagementTableViewController : UITableViewController
 
 @end
-

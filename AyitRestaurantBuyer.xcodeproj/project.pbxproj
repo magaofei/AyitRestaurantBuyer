@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		227C01701E9CDB9200E05BF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C016F1E9CDB9200E05BF9 /* main.m */; };
 		227C01731E9CDB9200E05BF9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01721E9CDB9200E05BF9 /* AppDelegate.m */; };
-		227C01761E9CDB9200E05BF9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01751E9CDB9200E05BF9 /* ViewController.m */; };
-		227C01791E9CDB9200E05BF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227C01771E9CDB9200E05BF9 /* Main.storyboard */; };
 		227C017B1E9CDB9200E05BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227C017A1E9CDB9200E05BF9 /* Assets.xcassets */; };
 		227C017E1E9CDB9200E05BF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227C017C1E9CDB9200E05BF9 /* LaunchScreen.storyboard */; };
 		227C01891E9CDB9200E05BF9 /* AyitRestaurantBuyerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01881E9CDB9200E05BF9 /* AyitRestaurantBuyerTests.m */; };
 		227C01941E9CDB9200E05BF9 /* AyitRestaurantBuyerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01931E9CDB9200E05BF9 /* AyitRestaurantBuyerUITests.m */; };
+		227C01AC1E9CDC3A00E05BF9 /* GMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01AB1E9CDC3A00E05BF9 /* GMTabBarViewController.m */; };
+		227C01C01E9CDFFF00E05BF9 /* GMOrderManagementTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01BF1E9CDFFF00E05BF9 /* GMOrderManagementTableViewController.m */; };
+		227C01C31E9CE07000E05BF9 /* GMMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01C21E9CE07000E05BF9 /* GMMyViewController.m */; };
+		227C01C61E9CE08C00E05BF9 /* GMNearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01C51E9CE08C00E05BF9 /* GMNearbyViewController.m */; };
+		227C01C91E9CE0A600E05BF9 /* GMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01C81E9CE0A600E05BF9 /* GMHomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +42,6 @@
 		227C016F1E9CDB9200E05BF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		227C01711E9CDB9200E05BF9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		227C01721E9CDB9200E05BF9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		227C01741E9CDB9200E05BF9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		227C01751E9CDB9200E05BF9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		227C01781E9CDB9200E05BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		227C017A1E9CDB9200E05BF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		227C017D1E9CDB9200E05BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		227C017F1E9CDB9200E05BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +51,16 @@
 		227C018F1E9CDB9200E05BF9 /* AyitRestaurantBuyerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AyitRestaurantBuyerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		227C01931E9CDB9200E05BF9 /* AyitRestaurantBuyerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AyitRestaurantBuyerUITests.m; sourceTree = "<group>"; };
 		227C01951E9CDB9200E05BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		227C01AA1E9CDC3A00E05BF9 /* GMTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMTabBarViewController.h; path = Classes/Main/Controller/GMTabBarViewController.h; sourceTree = "<group>"; };
+		227C01AB1E9CDC3A00E05BF9 /* GMTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMTabBarViewController.m; path = Classes/Main/Controller/GMTabBarViewController.m; sourceTree = "<group>"; };
+		227C01BE1E9CDFFF00E05BF9 /* GMOrderManagementTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMOrderManagementTableViewController.h; path = Classes/OrderManagement/Controller/GMOrderManagementTableViewController.h; sourceTree = "<group>"; };
+		227C01BF1E9CDFFF00E05BF9 /* GMOrderManagementTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMOrderManagementTableViewController.m; path = Classes/OrderManagement/Controller/GMOrderManagementTableViewController.m; sourceTree = "<group>"; };
+		227C01C11E9CE07000E05BF9 /* GMMyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMMyViewController.h; path = Classes/My/Controller/GMMyViewController.h; sourceTree = "<group>"; };
+		227C01C21E9CE07000E05BF9 /* GMMyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMMyViewController.m; path = Classes/My/Controller/GMMyViewController.m; sourceTree = "<group>"; };
+		227C01C41E9CE08C00E05BF9 /* GMNearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMNearbyViewController.h; path = Classes/Nearby/Controller/GMNearbyViewController.h; sourceTree = "<group>"; };
+		227C01C51E9CE08C00E05BF9 /* GMNearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMNearbyViewController.m; path = Classes/Nearby/Controller/GMNearbyViewController.m; sourceTree = "<group>"; };
+		227C01C71E9CE0A600E05BF9 /* GMHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMHomeViewController.h; path = Classes/Home/Controller/GMHomeViewController.h; sourceTree = "<group>"; };
+		227C01C81E9CE0A600E05BF9 /* GMHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMHomeViewController.m; path = Classes/Home/Controller/GMHomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +111,10 @@
 		227C016D1E9CDB9200E05BF9 /* AyitRestaurantBuyer */ = {
 			isa = PBXGroup;
 			children = (
+				227C01A21E9CDBC800E05BF9 /* Helper */,
+				227C01A11E9CDBB300E05BF9 /* Classes */,
 				227C01711E9CDB9200E05BF9 /* AppDelegate.h */,
 				227C01721E9CDB9200E05BF9 /* AppDelegate.m */,
-				227C01741E9CDB9200E05BF9 /* ViewController.h */,
-				227C01751E9CDB9200E05BF9 /* ViewController.m */,
-				227C01771E9CDB9200E05BF9 /* Main.storyboard */,
 				227C017A1E9CDB9200E05BF9 /* Assets.xcassets */,
 				227C017C1E9CDB9200E05BF9 /* LaunchScreen.storyboard */,
 				227C017F1E9CDB9200E05BF9 /* Info.plist */,
@@ -138,6 +147,190 @@
 				227C01951E9CDB9200E05BF9 /* Info.plist */,
 			);
 			path = AyitRestaurantBuyerUITests;
+			sourceTree = "<group>";
+		};
+		227C01A11E9CDBB300E05BF9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				227C01B01E9CDCAE00E05BF9 /* My */,
+				227C01AF1E9CDCA300E05BF9 /* OrderManagement */,
+				227C01AE1E9CDC9300E05BF9 /* Nearby */,
+				227C01AD1E9CDC5C00E05BF9 /* Home */,
+				227C01A31E9CDBD000E05BF9 /* Main */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		227C01A21E9CDBC800E05BF9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		227C01A31E9CDBD000E05BF9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				227C01A91E9CDC2200E05BF9 /* Model */,
+				227C01A81E9CDC1800E05BF9 /* View */,
+				227C01A71E9CDC1200E05BF9 /* Controller */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		227C01A71E9CDC1200E05BF9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				227C01AA1E9CDC3A00E05BF9 /* GMTabBarViewController.h */,
+				227C01AB1E9CDC3A00E05BF9 /* GMTabBarViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		227C01A81E9CDC1800E05BF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		227C01A91E9CDC2200E05BF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		227C01AD1E9CDC5C00E05BF9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				227C01BD1E9CDFB800E05BF9 /* Controller */,
+				227C01BC1E9CDFB700E05BF9 /* View */,
+				227C01BB1E9CDFB600E05BF9 /* Model */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		227C01AE1E9CDC9300E05BF9 /* Nearby */ = {
+			isa = PBXGroup;
+			children = (
+				227C01BA1E9CDFB400E05BF9 /* Controller */,
+				227C01B91E9CDFB300E05BF9 /* View */,
+				227C01B81E9CDFB200E05BF9 /* Model */,
+			);
+			name = Nearby;
+			sourceTree = "<group>";
+		};
+		227C01AF1E9CDCA300E05BF9 /* OrderManagement */ = {
+			isa = PBXGroup;
+			children = (
+				227C01B31E9CDF9500E05BF9 /* View */,
+				227C01B21E9CDF8900E05BF9 /* Model */,
+				227C01B11E9CDF7600E05BF9 /* Controller */,
+			);
+			name = OrderManagement;
+			sourceTree = "<group>";
+		};
+		227C01B01E9CDCAE00E05BF9 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				227C01B71E9CDFAF00E05BF9 /* Model */,
+				227C01B51E9CDFAA00E05BF9 /* Controller */,
+				227C01B41E9CDFA300E05BF9 /* View */,
+			);
+			name = My;
+			sourceTree = "<group>";
+		};
+		227C01B11E9CDF7600E05BF9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				227C01BE1E9CDFFF00E05BF9 /* GMOrderManagementTableViewController.h */,
+				227C01BF1E9CDFFF00E05BF9 /* GMOrderManagementTableViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		227C01B21E9CDF8900E05BF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		227C01B31E9CDF9500E05BF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		227C01B41E9CDFA300E05BF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		227C01B51E9CDFAA00E05BF9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				227C01C11E9CE07000E05BF9 /* GMMyViewController.h */,
+				227C01C21E9CE07000E05BF9 /* GMMyViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		227C01B71E9CDFAF00E05BF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		227C01B81E9CDFB200E05BF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		227C01B91E9CDFB300E05BF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		227C01BA1E9CDFB400E05BF9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				227C01C41E9CE08C00E05BF9 /* GMNearbyViewController.h */,
+				227C01C51E9CE08C00E05BF9 /* GMNearbyViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		227C01BB1E9CDFB600E05BF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		227C01BC1E9CDFB700E05BF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		227C01BD1E9CDFB800E05BF9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				227C01C71E9CE0A600E05BF9 /* GMHomeViewController.h */,
+				227C01C81E9CE0A600E05BF9 /* GMHomeViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +395,7 @@
 		227C01631E9CDB9200E05BF9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GM;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Gaofei Ma";
 				TargetAttributes = {
@@ -251,7 +445,6 @@
 			files = (
 				227C017E1E9CDB9200E05BF9 /* LaunchScreen.storyboard in Resources */,
 				227C017B1E9CDB9200E05BF9 /* Assets.xcassets in Resources */,
-				227C01791E9CDB9200E05BF9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +469,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				227C01761E9CDB9200E05BF9 /* ViewController.m in Sources */,
+				227C01AC1E9CDC3A00E05BF9 /* GMTabBarViewController.m in Sources */,
+				227C01C31E9CE07000E05BF9 /* GMMyViewController.m in Sources */,
+				227C01C01E9CDFFF00E05BF9 /* GMOrderManagementTableViewController.m in Sources */,
+				227C01C61E9CE08C00E05BF9 /* GMNearbyViewController.m in Sources */,
 				227C01731E9CDB9200E05BF9 /* AppDelegate.m in Sources */,
+				227C01C91E9CE0A600E05BF9 /* GMHomeViewController.m in Sources */,
 				227C01701E9CDB9200E05BF9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,14 +511,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		227C01771E9CDB9200E05BF9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				227C01781E9CDB9200E05BF9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		227C017C1E9CDB9200E05BF9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
