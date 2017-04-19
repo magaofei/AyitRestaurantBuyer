@@ -19,6 +19,15 @@
 		227C01C61E9CE08C00E05BF9 /* GMNearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01C51E9CE08C00E05BF9 /* GMNearbyViewController.m */; };
 		227C01C91E9CE0A600E05BF9 /* GMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01C81E9CE0A600E05BF9 /* GMHomeViewController.m */; };
 		227C01CC1E9CE24C00E05BF9 /* GMNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01CB1E9CE24C00E05BF9 /* GMNavigationViewController.m */; };
+		228868881EA70B4F00564E0F /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228868831EA70B4F00564E0F /* ForgetPasswordViewController.m */; };
+		228868891EA70B4F00564E0F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228868851EA70B4F00564E0F /* LoginViewController.m */; };
+		2288688A1EA70B4F00564E0F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228868871EA70B4F00564E0F /* RegisterViewController.m */; };
+		2288688D1EA70B8A00564E0F /* AccountItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2288688C1EA70B8A00564E0F /* AccountItem.m */; };
+		228868901EA7126800564E0F /* GMCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2288688F1EA7126800564E0F /* GMCarouselView.m */; };
+		228868931EA72F5900564E0F /* GMGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 228868921EA72F5900564E0F /* GMGoodsTableViewCell.m */; };
+		2CC7721E0E121A7230AEDED6 /* Pods_AyitRestaurantBuyer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9583783A807C538F5D62DED2 /* Pods_AyitRestaurantBuyer.framework */; };
+		6B0B45DE14AA43E08B1DE083 /* Pods_AyitRestaurantBuyerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DE97FA91C60B524BDD0DE5 /* Pods_AyitRestaurantBuyerUITests.framework */; };
+		A9C1DD3835A4B4080D8B9361 /* Pods_AyitRestaurantBuyerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2DE3FA2CBD529901CA3E67 /* Pods_AyitRestaurantBuyerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		124FF92E633F796139CAE215 /* Pods-AyitRestaurantBuyerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantBuyerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantBuyerUITests/Pods-AyitRestaurantBuyerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		227C016B1E9CDB9200E05BF9 /* AyitRestaurantBuyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AyitRestaurantBuyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		227C016F1E9CDB9200E05BF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		227C01711E9CDB9200E05BF9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,6 +74,26 @@
 		227C01C81E9CE0A600E05BF9 /* GMHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMHomeViewController.m; path = Classes/Home/Controller/GMHomeViewController.m; sourceTree = "<group>"; };
 		227C01CA1E9CE24C00E05BF9 /* GMNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMNavigationViewController.h; path = Classes/Main/Controller/GMNavigationViewController.h; sourceTree = "<group>"; };
 		227C01CB1E9CE24C00E05BF9 /* GMNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMNavigationViewController.m; path = Classes/Main/Controller/GMNavigationViewController.m; sourceTree = "<group>"; };
+		228868821EA70B4F00564E0F /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForgetPasswordViewController.h; path = Classes/Login/Controller/ForgetPasswordViewController.h; sourceTree = "<group>"; };
+		228868831EA70B4F00564E0F /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForgetPasswordViewController.m; path = Classes/Login/Controller/ForgetPasswordViewController.m; sourceTree = "<group>"; };
+		228868841EA70B4F00564E0F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Classes/Login/Controller/LoginViewController.h; sourceTree = "<group>"; };
+		228868851EA70B4F00564E0F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Classes/Login/Controller/LoginViewController.m; sourceTree = "<group>"; };
+		228868861EA70B4F00564E0F /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Classes/Login/Controller/RegisterViewController.h; sourceTree = "<group>"; };
+		228868871EA70B4F00564E0F /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Classes/Login/Controller/RegisterViewController.m; sourceTree = "<group>"; };
+		2288688B1EA70B8A00564E0F /* AccountItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountItem.h; path = Classes/Login/Model/AccountItem.h; sourceTree = "<group>"; };
+		2288688C1EA70B8A00564E0F /* AccountItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountItem.m; path = Classes/Login/Model/AccountItem.m; sourceTree = "<group>"; };
+		2288688E1EA7126800564E0F /* GMCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMCarouselView.h; path = Classes/Home/View/GMCarouselView.h; sourceTree = "<group>"; };
+		2288688F1EA7126800564E0F /* GMCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMCarouselView.m; path = Classes/Home/View/GMCarouselView.m; sourceTree = "<group>"; };
+		228868911EA72F5900564E0F /* GMGoodsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMGoodsTableViewCell.h; path = Classes/Home/View/GMGoodsTableViewCell.h; sourceTree = "<group>"; };
+		228868921EA72F5900564E0F /* GMGoodsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMGoodsTableViewCell.m; path = Classes/Home/View/GMGoodsTableViewCell.m; sourceTree = "<group>"; };
+		7BDFF6CEA6649915D3D7BD45 /* Pods-AyitRestaurantBuyerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantBuyerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantBuyerTests/Pods-AyitRestaurantBuyerTests.release.xcconfig"; sourceTree = "<group>"; };
+		8D1B13B7296F37E97F9EB0D8 /* Pods-AyitRestaurantBuyer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantBuyer.release.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantBuyer/Pods-AyitRestaurantBuyer.release.xcconfig"; sourceTree = "<group>"; };
+		9583783A807C538F5D62DED2 /* Pods_AyitRestaurantBuyer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AyitRestaurantBuyer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B7C3D4FB46BE7D8A7E0FE9E /* Pods-AyitRestaurantBuyerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantBuyerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantBuyerTests/Pods-AyitRestaurantBuyerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE2DE3FA2CBD529901CA3E67 /* Pods_AyitRestaurantBuyerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AyitRestaurantBuyerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5000C32C2224A3CC21F6E51 /* Pods-AyitRestaurantBuyerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantBuyerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantBuyerUITests/Pods-AyitRestaurantBuyerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E8DE97FA91C60B524BDD0DE5 /* Pods_AyitRestaurantBuyerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AyitRestaurantBuyerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F21061536E077872014A33BD /* Pods-AyitRestaurantBuyer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantBuyer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantBuyer/Pods-AyitRestaurantBuyer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC7721E0E121A7230AEDED6 /* Pods_AyitRestaurantBuyer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C1DD3835A4B4080D8B9361 /* Pods_AyitRestaurantBuyerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B0B45DE14AA43E08B1DE083 /* Pods_AyitRestaurantBuyerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +131,8 @@
 				227C01871E9CDB9200E05BF9 /* AyitRestaurantBuyerTests */,
 				227C01921E9CDB9200E05BF9 /* AyitRestaurantBuyerUITests */,
 				227C016C1E9CDB9200E05BF9 /* Products */,
+				F91CAF1A375B8CCC35E61A27 /* Pods */,
+				5C0B200DFCC6318C749B222E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,6 +190,7 @@
 		227C01A11E9CDBB300E05BF9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				228868751EA70ADA00564E0F /* Login */,
 				227C01AD1E9CDC5C00E05BF9 /* Home */,
 				227C01AE1E9CDC9300E05BF9 /* Nearby */,
 				227C01AF1E9CDCA300E05BF9 /* OrderManagement */,
@@ -325,6 +361,10 @@
 		227C01BC1E9CDFB700E05BF9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2288688E1EA7126800564E0F /* GMCarouselView.h */,
+				2288688F1EA7126800564E0F /* GMCarouselView.m */,
+				228868911EA72F5900564E0F /* GMGoodsTableViewCell.h */,
+				228868921EA72F5900564E0F /* GMGoodsTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -338,6 +378,68 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		228868751EA70ADA00564E0F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				228868781EA70AF900564E0F /* Model */,
+				228868771EA70AF200564E0F /* View */,
+				228868761EA70AE100564E0F /* Controller */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		228868761EA70AE100564E0F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				228868821EA70B4F00564E0F /* ForgetPasswordViewController.h */,
+				228868831EA70B4F00564E0F /* ForgetPasswordViewController.m */,
+				228868841EA70B4F00564E0F /* LoginViewController.h */,
+				228868851EA70B4F00564E0F /* LoginViewController.m */,
+				228868861EA70B4F00564E0F /* RegisterViewController.h */,
+				228868871EA70B4F00564E0F /* RegisterViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		228868771EA70AF200564E0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		228868781EA70AF900564E0F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2288688B1EA70B8A00564E0F /* AccountItem.h */,
+				2288688C1EA70B8A00564E0F /* AccountItem.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5C0B200DFCC6318C749B222E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9583783A807C538F5D62DED2 /* Pods_AyitRestaurantBuyer.framework */,
+				AE2DE3FA2CBD529901CA3E67 /* Pods_AyitRestaurantBuyerTests.framework */,
+				E8DE97FA91C60B524BDD0DE5 /* Pods_AyitRestaurantBuyerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F91CAF1A375B8CCC35E61A27 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F21061536E077872014A33BD /* Pods-AyitRestaurantBuyer.debug.xcconfig */,
+				8D1B13B7296F37E97F9EB0D8 /* Pods-AyitRestaurantBuyer.release.xcconfig */,
+				9B7C3D4FB46BE7D8A7E0FE9E /* Pods-AyitRestaurantBuyerTests.debug.xcconfig */,
+				7BDFF6CEA6649915D3D7BD45 /* Pods-AyitRestaurantBuyerTests.release.xcconfig */,
+				124FF92E633F796139CAE215 /* Pods-AyitRestaurantBuyerUITests.debug.xcconfig */,
+				D5000C32C2224A3CC21F6E51 /* Pods-AyitRestaurantBuyerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -345,9 +447,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 227C01981E9CDB9200E05BF9 /* Build configuration list for PBXNativeTarget "AyitRestaurantBuyer" */;
 			buildPhases = (
+				36D44F38A4A271BFC20896CD /* [CP] Check Pods Manifest.lock */,
 				227C01671E9CDB9200E05BF9 /* Sources */,
 				227C01681E9CDB9200E05BF9 /* Frameworks */,
 				227C01691E9CDB9200E05BF9 /* Resources */,
+				1D02D7A052024D67C8604548 /* [CP] Embed Pods Frameworks */,
+				62BDE90693D0E814374F1A6B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -362,9 +467,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 227C019B1E9CDB9200E05BF9 /* Build configuration list for PBXNativeTarget "AyitRestaurantBuyerTests" */;
 			buildPhases = (
+				86911FBEB68E80A9BF3E4161 /* [CP] Check Pods Manifest.lock */,
 				227C01801E9CDB9200E05BF9 /* Sources */,
 				227C01811E9CDB9200E05BF9 /* Frameworks */,
 				227C01821E9CDB9200E05BF9 /* Resources */,
+				202EDD6687873043A96DA73A /* [CP] Embed Pods Frameworks */,
+				B7F268A08EA3ACB463136188 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -380,9 +488,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 227C019E1E9CDB9200E05BF9 /* Build configuration list for PBXNativeTarget "AyitRestaurantBuyerUITests" */;
 			buildPhases = (
+				A34EB1E1CBDAF3724E18D7C5 /* [CP] Check Pods Manifest.lock */,
 				227C018B1E9CDB9200E05BF9 /* Sources */,
 				227C018C1E9CDB9200E05BF9 /* Frameworks */,
 				227C018D1E9CDB9200E05BF9 /* Resources */,
+				9DD8DAA1D13F155ADB4DBF82 /* [CP] Embed Pods Frameworks */,
+				842BF60241B61872A7BB11F4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -469,18 +580,162 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1D02D7A052024D67C8604548 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AyitRestaurantBuyer/Pods-AyitRestaurantBuyer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		202EDD6687873043A96DA73A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AyitRestaurantBuyerTests/Pods-AyitRestaurantBuyerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		36D44F38A4A271BFC20896CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		62BDE90693D0E814374F1A6B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AyitRestaurantBuyer/Pods-AyitRestaurantBuyer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		842BF60241B61872A7BB11F4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AyitRestaurantBuyerUITests/Pods-AyitRestaurantBuyerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86911FBEB68E80A9BF3E4161 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9DD8DAA1D13F155ADB4DBF82 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AyitRestaurantBuyerUITests/Pods-AyitRestaurantBuyerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A34EB1E1CBDAF3724E18D7C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B7F268A08EA3ACB463136188 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AyitRestaurantBuyerTests/Pods-AyitRestaurantBuyerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		227C01671E9CDB9200E05BF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				228868931EA72F5900564E0F /* GMGoodsTableViewCell.m in Sources */,
 				227C01AC1E9CDC3A00E05BF9 /* GMTabBarViewController.m in Sources */,
+				228868891EA70B4F00564E0F /* LoginViewController.m in Sources */,
+				228868881EA70B4F00564E0F /* ForgetPasswordViewController.m in Sources */,
 				227C01C31E9CE07000E05BF9 /* GMMyViewController.m in Sources */,
 				227C01CC1E9CE24C00E05BF9 /* GMNavigationViewController.m in Sources */,
 				227C01C01E9CDFFF00E05BF9 /* GMOrderManagementTableViewController.m in Sources */,
 				227C01C61E9CE08C00E05BF9 /* GMNearbyViewController.m in Sources */,
 				227C01731E9CDB9200E05BF9 /* AppDelegate.m in Sources */,
+				2288688D1EA70B8A00564E0F /* AccountItem.m in Sources */,
 				227C01C91E9CE0A600E05BF9 /* GMHomeViewController.m in Sources */,
+				2288688A1EA70B4F00564E0F /* RegisterViewController.m in Sources */,
+				228868901EA7126800564E0F /* GMCarouselView.m in Sources */,
 				227C01701E9CDB9200E05BF9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -622,6 +877,7 @@
 		};
 		227C01991E9CDB9200E05BF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F21061536E077872014A33BD /* Pods-AyitRestaurantBuyer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N5G28WF2Y2;
@@ -635,6 +891,7 @@
 		};
 		227C019A1E9CDB9200E05BF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D1B13B7296F37E97F9EB0D8 /* Pods-AyitRestaurantBuyer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N5G28WF2Y2;
@@ -648,6 +905,7 @@
 		};
 		227C019C1E9CDB9200E05BF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B7C3D4FB46BE7D8A7E0FE9E /* Pods-AyitRestaurantBuyerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = N5G28WF2Y2;
@@ -661,6 +919,7 @@
 		};
 		227C019D1E9CDB9200E05BF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BDFF6CEA6649915D3D7BD45 /* Pods-AyitRestaurantBuyerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = N5G28WF2Y2;
@@ -674,6 +933,7 @@
 		};
 		227C019F1E9CDB9200E05BF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 124FF92E633F796139CAE215 /* Pods-AyitRestaurantBuyerUITests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = N5G28WF2Y2;
 				INFOPLIST_FILE = AyitRestaurantBuyerUITests/Info.plist;
@@ -686,6 +946,7 @@
 		};
 		227C01A01E9CDB9200E05BF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5000C32C2224A3CC21F6E51 /* Pods-AyitRestaurantBuyerUITests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = N5G28WF2Y2;
 				INFOPLIST_FILE = AyitRestaurantBuyerUITests/Info.plist;
@@ -715,6 +976,7 @@
 				227C019A1E9CDB9200E05BF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		227C019B1E9CDB9200E05BF9 /* Build configuration list for PBXNativeTarget "AyitRestaurantBuyerTests" */ = {
 			isa = XCConfigurationList;
@@ -723,6 +985,7 @@
 				227C019D1E9CDB9200E05BF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		227C019E1E9CDB9200E05BF9 /* Build configuration list for PBXNativeTarget "AyitRestaurantBuyerUITests" */ = {
 			isa = XCConfigurationList;
@@ -731,6 +994,7 @@
 				227C01A01E9CDB9200E05BF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

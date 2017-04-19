@@ -1,0 +1,22 @@
+2017-04-19T10:52:33.305593000 0.017209s notice: Recursively removing directory /Users/MAMIAN/GitHub/AyitRestaurantBuyer/rethinkdb_data/tmp
+2017-04-19T10:52:33.307712000 0.019333s notice: Initializing directory /Users/MAMIAN/GitHub/AyitRestaurantBuyer/rethinkdb_data
+2017-04-19T10:52:33.307899000 0.019516s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/MAMIAN/GitHub/AyitRestaurantBuyer/rethinkdb_data' did not already exist or is empty.)
+2017-04-19T10:52:33.307945000 0.019562s notice: Running rethinkdb 2.3.5 (CLANG 8.0.0 (clang-800.0.38))...
+2017-04-19T10:52:33.313028000 0.024645s notice: Running on Darwin 16.5.0 x86_64
+2017-04-19T10:52:33.313072000 0.024689s notice: Loading data from directory /Users/MAMIAN/GitHub/AyitRestaurantBuyer/rethinkdb_data
+2017-04-19T10:52:33.433306000 0.144922s info: Automatically using cache size of 100 MB
+2017-04-19T10:52:33.433314000 0.144930s warn: Cache size does not leave much memory for server and query overhead (available memory: 1116 MB).
+2017-04-19T10:52:33.433318000 0.144934s warn: Cache size is very low and may impact performance.
+2017-04-19T10:52:33.434259000 0.145876s notice: Listening for intracluster connections on port 29015
+2017-04-19T10:52:33.436480000 0.148097s notice: Listening for client driver connections on port 28015
+2017-04-19T10:52:33.436683000 0.148299s notice: Listening for administrative HTTP connections on port 8080
+2017-04-19T10:52:33.436686000 0.148302s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2017-04-19T10:52:33.436692000 0.148308s notice: Listening on driver addresses: 127.0.0.1, ::1
+2017-04-19T10:52:33.436694000 0.148310s notice: Listening on http addresses: 127.0.0.1, ::1
+2017-04-19T10:52:33.436700000 0.148316s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-04-19T10:52:33.436704000 0.148320s notice: Server ready, "localhost_q9o" 3ea4e5e7-48dd-45bc-9101-e75d5e4fb25e
+2017-04-19T10:52:35.305990000 2.017544s notice: Server got SIGINT from pid 848, uid 501; shutting down...
+2017-04-19T10:52:35.306116000 2.017670s notice: Shutting down client connections...
+2017-04-19T10:52:35.306280000 2.017876s notice: All client connections closed.
+2017-04-19T10:52:35.306342000 2.017896s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-04-19T10:52:35.309352000 2.020907s notice: Storage engine shut down.
