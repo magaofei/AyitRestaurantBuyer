@@ -7,11 +7,15 @@
 //
 
 #import "GMNearbyViewController.h"
+#import "GMNearbySellerTableViewCell.h"
 
-@interface GMNearbyViewController ()
+@interface GMNearbyViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) NSArray *list;
 
 @end
 
+static NSString *cellName = @"nearbyCell";
 @implementation GMNearbyViewController
 
 - (void)viewDidLoad {
@@ -19,11 +23,39 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"附近商家";
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self initSubviews];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void)initSubviews {
+    
+}
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _list.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    GMNearbySellerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName];
+    if (!cell) {
+        cell = [[GMNearbySellerTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
+    }
+    
+    // cell code
+    
+    return cell;
+    
 }
 
 /*

@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "LoginViewController.h"
+//#import "LoginViewController.h"
 #import "GMNavigationViewController.h"
+#import "GMTabBarViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -23,10 +24,10 @@
     
 //    GMTabBarViewController *tabBarVC= [[GMTabBarViewController alloc] init];
 //    self.window.rootViewController = tabBarVC;
-    
-    LoginViewController *loginVC = [[LoginViewController alloc] init];
-    GMNavigationViewController *loginNav = [[GMNavigationViewController alloc] initWithRootViewController:loginVC];
-    self.window.rootViewController = loginNav;
+    GMTabBarViewController *tabBarVC = [[GMTabBarViewController alloc] init];
+//    LoginViewController *loginVC = [[LoginViewController alloc] init];
+//    GMNavigationViewController *loginNav = [[GMNavigationViewController alloc] initWithRootViewController:loginVC];
+    self.window.rootViewController = tabBarVC;
     [self.window makeKeyAndVisible];
     
     return YES;

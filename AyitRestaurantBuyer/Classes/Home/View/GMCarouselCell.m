@@ -1,18 +1,18 @@
 //
-//  GMCarouselView.m
+//  GMCarouselCell.m
 //  AyitRestaurantBuyer
 //
-//  Created by MAMIAN on 2017/4/19.
+//  Created by MAMIAN on 2017/4/22.
 //  Copyright © 2017年 Gaofei Ma. All rights reserved.
 //
 
-#import "GMCarouselView.h"
+#import "GMCarouselCell.h"
 #define screenWidth [UIScreen mainScreen].bounds.size.width
 #define screenHeight [UIScreen mainScreen].bounds.size.height
 
 static NSUInteger height = 120;
 
-@interface GMCarouselView () 
+@interface GMCarouselCell () <UIScrollViewDelegate>
 
 // 轮播器
 
@@ -22,18 +22,35 @@ static NSUInteger height = 120;
 
 
 @property (nonatomic, assign) NSInteger imageCount;
+
 @end
 
-@implementation GMCarouselView
+@implementation GMCarouselCell
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        [self initCarouselView];
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self initSubviews];
     }
     
+    
     return self;
-    
-    
+}
+
+
+- (void)initSubviews {
+    [self initCarouselView];
 }
 
 /**
@@ -58,7 +75,7 @@ static NSUInteger height = 120;
 - (void)addScrollView {
     _scrollView = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self addSubview:_scrollView];
-//    _scrollView.delegate = self;
+    _scrollView.delegate = self;
     _scrollView.contentSize = CGSizeMake(3 * screenWidth, height);
     [_scrollView setContentOffset:CGPointMake(screenWidth, 0) animated:YES];
     _scrollView.pagingEnabled = YES;
@@ -124,15 +141,17 @@ static NSUInteger height = 120;
     _rightImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%li.jpg", rightImageIndex]];
 }
 
+#pragma mark - 停止滚动后
 
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    
+    //    [_carouselView reloadImage];
+    //    [_carouselView.scrollView setContentOffset:CGPointMake(screenWidth, 0) animated:NO];
+    //    _carouselView.pageControl.currentPage=_carouselView.currentImageIndex;
+    
+    [self reloadImage];
+    [_scrollView setContentOffset:CGPointMake(screenWidth, 0) animated:NO];
+    _pageControl.currentPage=_currentImageIndex;
+    
 }
-*/
-
 @end

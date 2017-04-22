@@ -1,5 +1,5 @@
 //
-//  GMGoodsTableViewCell.h
+//  GMNearbySellerTableViewCell.h
 //  AyitRestaurantBuyer
 //
 //  Created by MAMIAN on 2017/4/19.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GMGoodsTableViewCell : UITableViewCell
+@interface GMNearbySellerTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UILabel *nameLabel;
 

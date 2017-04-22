@@ -1,15 +1,15 @@
 //
-//  GMGoodsTableViewCell.m
+//  GMNearbySellerTableViewCell.m
 //  AyitRestaurantBuyer
 //
 //  Created by MAMIAN on 2017/4/19.
 //  Copyright © 2017年 Gaofei Ma. All rights reserved.
 //
 
-#import "GMGoodsTableViewCell.h"
+#import "GMNearbySellerTableViewCell.h"
 #import <Masonry/Masonry.h>
 
-@implementation GMGoodsTableViewCell
+@implementation GMNearbySellerTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -23,15 +23,21 @@
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    if (self) {
         [self initSubviews];
     }
     
     return self;
+    
 }
 
 
-- (void) initSubviews {
+/**
+ Cell
+ */
+- (void)initSubviews {
     
     // 联系人姓名
     _nameLabel = [[UILabel alloc] init];
@@ -62,9 +68,9 @@
     _goodsPriceLabel.font = [UIFont boldSystemFontOfSize:16];
     [self addSubview:_goodsPriceLabel];
     
-//    // 订单状态
-//    _orderStatusLabel = [[UILabel alloc] init];
-//    [self addSubview:_orderStatusLabel];
+    //    // 订单状态
+    //    _orderStatusLabel = [[UILabel alloc] init];
+    //    [self addSubview:_orderStatusLabel];
     
     [self initLayoutSubviews];
 }
@@ -73,10 +79,10 @@
     // 联系人姓名
     [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.mas_top).offset(10);
-      
+        
         make.left.equalTo(self.mas_left).offset(15);
     }];
-  
+    
     
     // 手机号
     [_phoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -113,14 +119,13 @@
         make.left.equalTo(_goodsTitleLabel.mas_left);
     }];
     
-//    // 订单状态
-//    [_orderStatusLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.bottom.equalTo(_goodsIcon.mas_bottom);
-//        make.right.equalTo(self.mas_right).offset(-15);
-//    }];
+    //    // 订单状态
+    //    [_orderStatusLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.bottom.equalTo(_goodsIcon.mas_bottom);
+    //        make.right.equalTo(self.mas_right).offset(-15);
+    //    }];
     
     //
 }
-
 
 @end
