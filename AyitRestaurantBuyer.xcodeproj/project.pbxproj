@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		222EE33F1EA778DF001F707B /* GMNearbySellerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 222EE33E1EA778DF001F707B /* GMNearbySellerTableViewCell.m */; };
 		222FC7071EAB450400DE91EB /* GMCarouselCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC7061EAB450400DE91EB /* GMCarouselCell.m */; };
+		222FC70D1EAB4C0600DE91EB /* GMMerchantItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC70C1EAB4C0600DE91EB /* GMMerchantItem.m */; };
+		222FC7101EAB4CBE00DE91EB /* GMMerchantData.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC70F1EAB4CBE00DE91EB /* GMMerchantData.m */; };
+		222FC7171EAB4E1600DE91EB /* GMDetailMerchantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC7161EAB4E1600DE91EB /* GMDetailMerchantViewController.m */; };
+		222FC71C1EAB4EB100DE91EB /* GMDetailMerchantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222FC71B1EAB4EB100DE91EB /* GMDetailMerchantTableViewCell.xib */; };
+		222FC71F1EAB50B700DE91EB /* GMPriceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC71E1EAB50B700DE91EB /* GMPriceTableViewCell.m */; };
+		222FC7221EAB50D800DE91EB /* GMInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC7211EAB50D800DE91EB /* GMInfoTableViewCell.m */; };
+		222FC7251EAB86D900DE91EB /* GMMyHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC7241EAB86D900DE91EB /* GMMyHeadTableViewCell.m */; };
+		222FC7271EAB88BB00DE91EB /* MyHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222FC7261EAB88BB00DE91EB /* MyHeadView.xib */; };
+		222FC72B1EAC4E0A00DE91EB /* GMUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC72A1EAC4E0A00DE91EB /* GMUserDefaults.m */; };
+		222FC7301EAC511700DE91EB /* GMLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC72F1EAC511700DE91EB /* GMLocation.m */; };
 		227C01701E9CDB9200E05BF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C016F1E9CDB9200E05BF9 /* main.m */; };
 		227C01731E9CDB9200E05BF9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01721E9CDB9200E05BF9 /* AppDelegate.m */; };
 		227C017B1E9CDB9200E05BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227C017A1E9CDB9200E05BF9 /* Assets.xcassets */; };
@@ -54,6 +64,24 @@
 		222EE33E1EA778DF001F707B /* GMNearbySellerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMNearbySellerTableViewCell.m; path = Classes/Nearby/View/GMNearbySellerTableViewCell.m; sourceTree = "<group>"; };
 		222FC7051EAB450400DE91EB /* GMCarouselCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMCarouselCell.h; path = Classes/Home/View/GMCarouselCell.h; sourceTree = "<group>"; };
 		222FC7061EAB450400DE91EB /* GMCarouselCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMCarouselCell.m; path = Classes/Home/View/GMCarouselCell.m; sourceTree = "<group>"; };
+		222FC70B1EAB4C0600DE91EB /* GMMerchantItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMMerchantItem.h; path = Classes/Nearby/Model/GMMerchantItem.h; sourceTree = "<group>"; };
+		222FC70C1EAB4C0600DE91EB /* GMMerchantItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMMerchantItem.m; path = Classes/Nearby/Model/GMMerchantItem.m; sourceTree = "<group>"; };
+		222FC70E1EAB4CBE00DE91EB /* GMMerchantData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMMerchantData.h; path = Classes/Nearby/Model/GMMerchantData.h; sourceTree = "<group>"; };
+		222FC70F1EAB4CBE00DE91EB /* GMMerchantData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMMerchantData.m; path = Classes/Nearby/Model/GMMerchantData.m; sourceTree = "<group>"; };
+		222FC7151EAB4E1600DE91EB /* GMDetailMerchantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMDetailMerchantViewController.h; path = Classes/Nearby/DetailMerchant/Controller/GMDetailMerchantViewController.h; sourceTree = "<group>"; };
+		222FC7161EAB4E1600DE91EB /* GMDetailMerchantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMDetailMerchantViewController.m; path = Classes/Nearby/DetailMerchant/Controller/GMDetailMerchantViewController.m; sourceTree = "<group>"; };
+		222FC71B1EAB4EB100DE91EB /* GMDetailMerchantTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GMDetailMerchantTableViewCell.xib; path = Classes/Nearby/DetailMerchant/View/GMDetailMerchantTableViewCell.xib; sourceTree = "<group>"; };
+		222FC71D1EAB50B700DE91EB /* GMPriceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMPriceTableViewCell.h; path = Classes/Nearby/View/GMPriceTableViewCell.h; sourceTree = "<group>"; };
+		222FC71E1EAB50B700DE91EB /* GMPriceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMPriceTableViewCell.m; path = Classes/Nearby/View/GMPriceTableViewCell.m; sourceTree = "<group>"; };
+		222FC7201EAB50D800DE91EB /* GMInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMInfoTableViewCell.h; path = Classes/Nearby/View/GMInfoTableViewCell.h; sourceTree = "<group>"; };
+		222FC7211EAB50D800DE91EB /* GMInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMInfoTableViewCell.m; path = Classes/Nearby/View/GMInfoTableViewCell.m; sourceTree = "<group>"; };
+		222FC7231EAB86D900DE91EB /* GMMyHeadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMMyHeadTableViewCell.h; path = Classes/My/View/GMMyHeadTableViewCell.h; sourceTree = "<group>"; };
+		222FC7241EAB86D900DE91EB /* GMMyHeadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMMyHeadTableViewCell.m; path = Classes/My/View/GMMyHeadTableViewCell.m; sourceTree = "<group>"; };
+		222FC7261EAB88BB00DE91EB /* MyHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyHeadView.xib; path = Classes/My/View/MyHeadView.xib; sourceTree = "<group>"; };
+		222FC7291EAC4E0A00DE91EB /* GMUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMUserDefaults.h; path = Classes/Helper/DB/GMUserDefaults.h; sourceTree = "<group>"; };
+		222FC72A1EAC4E0A00DE91EB /* GMUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMUserDefaults.m; path = Classes/Helper/DB/GMUserDefaults.m; sourceTree = "<group>"; };
+		222FC72E1EAC511700DE91EB /* GMLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMLocation.h; path = Classes/Helper/Location/GMLocation.h; sourceTree = "<group>"; };
+		222FC72F1EAC511700DE91EB /* GMLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMLocation.m; path = Classes/Helper/Location/GMLocation.m; sourceTree = "<group>"; };
 		227C016B1E9CDB9200E05BF9 /* AyitRestaurantBuyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AyitRestaurantBuyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		227C016F1E9CDB9200E05BF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		227C01711E9CDB9200E05BF9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -127,6 +155,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		222FC7111EAB4DCE00DE91EB /* DetailMerchant */ = {
+			isa = PBXGroup;
+			children = (
+				222FC7141EAB4DEC00DE91EB /* Model */,
+				222FC7131EAB4DE800DE91EB /* View */,
+				222FC7121EAB4DE300DE91EB /* Controller */,
+			);
+			name = DetailMerchant;
+			sourceTree = "<group>";
+		};
+		222FC7121EAB4DE300DE91EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				222FC7151EAB4E1600DE91EB /* GMDetailMerchantViewController.h */,
+				222FC7161EAB4E1600DE91EB /* GMDetailMerchantViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		222FC7131EAB4DE800DE91EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				222FC71B1EAB4EB100DE91EB /* GMDetailMerchantTableViewCell.xib */,
+				222FC71D1EAB50B700DE91EB /* GMPriceTableViewCell.h */,
+				222FC71E1EAB50B700DE91EB /* GMPriceTableViewCell.m */,
+				222FC7201EAB50D800DE91EB /* GMInfoTableViewCell.h */,
+				222FC7211EAB50D800DE91EB /* GMInfoTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		222FC7141EAB4DEC00DE91EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		222FC7281EAC4DF000DE91EB /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				222FC7291EAC4E0A00DE91EB /* GMUserDefaults.h */,
+				222FC72A1EAC4E0A00DE91EB /* GMUserDefaults.m */,
+			);
+			name = DB;
+			sourceTree = "<group>";
+		};
+		222FC72C1EAC50F800DE91EB /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				222FC72E1EAC511700DE91EB /* GMLocation.h */,
+				222FC72F1EAC511700DE91EB /* GMLocation.m */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		222FC72D1EAC50FF00DE91EB /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Maps;
+			sourceTree = "<group>";
+		};
 		227C01621E9CDB9200E05BF9 = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +297,9 @@
 		227C01A21E9CDBC800E05BF9 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				222FC72D1EAC50FF00DE91EB /* Maps */,
+				222FC72C1EAC50F800DE91EB /* Location */,
+				222FC7281EAC4DF000DE91EB /* DB */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -258,6 +352,7 @@
 		227C01AE1E9CDC9300E05BF9 /* Nearby */ = {
 			isa = PBXGroup;
 			children = (
+				222FC7111EAB4DCE00DE91EB /* DetailMerchant */,
 				227C01BA1E9CDFB400E05BF9 /* Controller */,
 				227C01B91E9CDFB300E05BF9 /* View */,
 				227C01B81E9CDFB200E05BF9 /* Model */,
@@ -311,6 +406,9 @@
 		227C01B41E9CDFA300E05BF9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				222FC7231EAB86D900DE91EB /* GMMyHeadTableViewCell.h */,
+				222FC7241EAB86D900DE91EB /* GMMyHeadTableViewCell.m */,
+				222FC7261EAB88BB00DE91EB /* MyHeadView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -334,6 +432,10 @@
 		227C01B81E9CDFB200E05BF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				222FC70B1EAB4C0600DE91EB /* GMMerchantItem.h */,
+				222FC70C1EAB4C0600DE91EB /* GMMerchantItem.m */,
+				222FC70E1EAB4CBE00DE91EB /* GMMerchantData.h */,
+				222FC70F1EAB4CBE00DE91EB /* GMMerchantData.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -564,7 +666,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				222FC71C1EAB4EB100DE91EB /* GMDetailMerchantTableViewCell.xib in Resources */,
 				227C017E1E9CDB9200E05BF9 /* LaunchScreen.storyboard in Resources */,
+				222FC7271EAB88BB00DE91EB /* MyHeadView.xib in Resources */,
 				227C017B1E9CDB9200E05BF9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -728,21 +832,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				222FC72B1EAC4E0A00DE91EB /* GMUserDefaults.m in Sources */,
+				222FC70D1EAB4C0600DE91EB /* GMMerchantItem.m in Sources */,
 				228868931EA72F5900564E0F /* GMGoodsTableViewCell.m in Sources */,
 				227C01AC1E9CDC3A00E05BF9 /* GMTabBarViewController.m in Sources */,
+				222FC7251EAB86D900DE91EB /* GMMyHeadTableViewCell.m in Sources */,
 				228868891EA70B4F00564E0F /* LoginViewController.m in Sources */,
 				228868881EA70B4F00564E0F /* ForgetPasswordViewController.m in Sources */,
 				227C01C31E9CE07000E05BF9 /* GMMyViewController.m in Sources */,
 				227C01CC1E9CE24C00E05BF9 /* GMNavigationViewController.m in Sources */,
 				227C01C01E9CDFFF00E05BF9 /* GMOrderManagementTableViewController.m in Sources */,
+				222FC7171EAB4E1600DE91EB /* GMDetailMerchantViewController.m in Sources */,
 				227C01C61E9CE08C00E05BF9 /* GMNearbyViewController.m in Sources */,
 				227C01731E9CDB9200E05BF9 /* AppDelegate.m in Sources */,
 				222EE33F1EA778DF001F707B /* GMNearbySellerTableViewCell.m in Sources */,
 				2288688D1EA70B8A00564E0F /* AccountItem.m in Sources */,
 				227C01C91E9CE0A600E05BF9 /* GMHomeViewController.m in Sources */,
+				222FC7101EAB4CBE00DE91EB /* GMMerchantData.m in Sources */,
 				2288688A1EA70B4F00564E0F /* RegisterViewController.m in Sources */,
+				222FC7301EAC511700DE91EB /* GMLocation.m in Sources */,
 				222FC7071EAB450400DE91EB /* GMCarouselCell.m in Sources */,
 				227C01701E9CDB9200E05BF9 /* main.m in Sources */,
+				222FC71F1EAB50B700DE91EB /* GMPriceTableViewCell.m in Sources */,
+				222FC7221EAB50D800DE91EB /* GMInfoTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
