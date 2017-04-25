@@ -24,7 +24,17 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"注册";
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self initSubviews];
+    
 }
+
+// 子view
+- (void)initSubviews {
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
