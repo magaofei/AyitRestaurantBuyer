@@ -13,9 +13,12 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <YYModel/YYModel.h>
 
+#import "GMHTTPNetworking.h"
+#import "GMMerchantItem.h"
+
 @interface GMNearbyViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) NSArray *list;
+@property (nonatomic, strong) NSMutableArray *items;
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -33,11 +36,20 @@ static NSString *cellName = @"nearbyCell";
     
     
     [self initSubviews];
+    
+    [self initTableViewData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSMutableArray *)items {
+    if (!_items) {
+        _items = [NSMutableArray array];
+    }
+    return _items;
 }
 
 
@@ -49,6 +61,33 @@ static NSString *cellName = @"nearbyCell";
     [self.view addSubview: _tableView];
 }
 
+
+#pragma mark - customMethod
+- (void)initTableViewData {
+//    GMHTTPNetworking *manager = [GMHTTPNetworking sharedManager];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    [manager POST:@"http://112.74.217.134:8080/server/merchant/merchant/allMerchants" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (!responseObject) {
+            NSLog(@"没有数据");
+            return ;
+            
+        }
+        NSLog(@"%@", responseObject[@"success"]);
+        NSDictionary *d = responseObject;
+        GMMerchantData *item;
+        for (NSDictionary *a in d[@"data"]) {
+            item = [GMMerchantData yy_modelWithJSON:a];
+            [self.items addObject:item];
+        }
+        
+        
+        [self.tableView reloadData];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"加载失败");
+    }];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -65,11 +104,21 @@ static NSString *cellName = @"nearbyCell";
     }
     
     // cell code
-    [self testCellData:cell];
+    GMMerchantData *item = _items[indexPath.row];
+    if (!item) {
+        return cell;
+    }
+    cell.nameLabel.text = item.contact;
+    cell.phoneLabel.text = item.phone;
+    
+    
+    
+//    [self testCellData:cell];
     
     return cell;
     
 }
+
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     

@@ -49,7 +49,7 @@
 
 @interface GMMerchantData : NSObject
 
-@property (nonatomic, strong) NSString *ID;
+@property (nonatomic, strong) NSString *id;
 @property (nonatomic, strong) NSString *userid;
 @property (nonatomic, strong) NSString *contact;
 @property (nonatomic, strong) NSString *merchantName;

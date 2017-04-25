@@ -36,6 +36,7 @@
 		2288688A1EA70B4F00564E0F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228868871EA70B4F00564E0F /* RegisterViewController.m */; };
 		2288688D1EA70B8A00564E0F /* AccountItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2288688C1EA70B8A00564E0F /* AccountItem.m */; };
 		228868931EA72F5900564E0F /* GMGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 228868921EA72F5900564E0F /* GMGoodsTableViewCell.m */; };
+		22D97C271EAF577C003B242B /* GMHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D97C261EAF577C003B242B /* GMHTTPNetworking.m */; };
 		2CC7721E0E121A7230AEDED6 /* Pods_AyitRestaurantBuyer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9583783A807C538F5D62DED2 /* Pods_AyitRestaurantBuyer.framework */; };
 		6B0B45DE14AA43E08B1DE083 /* Pods_AyitRestaurantBuyerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DE97FA91C60B524BDD0DE5 /* Pods_AyitRestaurantBuyerUITests.framework */; };
 		A9C1DD3835A4B4080D8B9361 /* Pods_AyitRestaurantBuyerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2DE3FA2CBD529901CA3E67 /* Pods_AyitRestaurantBuyerTests.framework */; };
@@ -117,6 +118,8 @@
 		2288688C1EA70B8A00564E0F /* AccountItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountItem.m; path = Classes/Login/Model/AccountItem.m; sourceTree = "<group>"; };
 		228868911EA72F5900564E0F /* GMGoodsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMGoodsTableViewCell.h; path = Classes/Home/View/GMGoodsTableViewCell.h; sourceTree = "<group>"; };
 		228868921EA72F5900564E0F /* GMGoodsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMGoodsTableViewCell.m; path = Classes/Home/View/GMGoodsTableViewCell.m; sourceTree = "<group>"; };
+		22D97C251EAF577C003B242B /* GMHTTPNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMHTTPNetworking.h; path = Classes/Helper/Networking/GMHTTPNetworking.h; sourceTree = "<group>"; };
+		22D97C261EAF577C003B242B /* GMHTTPNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMHTTPNetworking.m; path = Classes/Helper/Networking/GMHTTPNetworking.m; sourceTree = "<group>"; };
 		7BDFF6CEA6649915D3D7BD45 /* Pods-AyitRestaurantBuyerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantBuyerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantBuyerTests/Pods-AyitRestaurantBuyerTests.release.xcconfig"; sourceTree = "<group>"; };
 		8D1B13B7296F37E97F9EB0D8 /* Pods-AyitRestaurantBuyer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantBuyer.release.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantBuyer/Pods-AyitRestaurantBuyer.release.xcconfig"; sourceTree = "<group>"; };
 		9583783A807C538F5D62DED2 /* Pods_AyitRestaurantBuyer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AyitRestaurantBuyer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -297,6 +300,7 @@
 		227C01A21E9CDBC800E05BF9 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				22D97C241EAF573F003B242B /* Network */,
 				222FC72D1EAC50FF00DE91EB /* Maps */,
 				222FC72C1EAC50F800DE91EB /* Location */,
 				222FC7281EAC4DF000DE91EB /* DB */,
@@ -522,6 +526,15 @@
 				2288688C1EA70B8A00564E0F /* AccountItem.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		22D97C241EAF573F003B242B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				22D97C251EAF577C003B242B /* GMHTTPNetworking.h */,
+				22D97C261EAF577C003B242B /* GMHTTPNetworking.m */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 		5C0B200DFCC6318C749B222E /* Frameworks */ = {
@@ -833,6 +846,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				222FC72B1EAC4E0A00DE91EB /* GMUserDefaults.m in Sources */,
+				22D97C271EAF577C003B242B /* GMHTTPNetworking.m in Sources */,
 				222FC70D1EAB4C0600DE91EB /* GMMerchantItem.m in Sources */,
 				228868931EA72F5900564E0F /* GMGoodsTableViewCell.m in Sources */,
 				227C01AC1E9CDC3A00E05BF9 /* GMTabBarViewController.m in Sources */,

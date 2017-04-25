@@ -10,6 +10,8 @@
 #import "GMCarouselCell.h"
 #import "GMPriceTableViewCell.h"
 #import "GMInfoTableViewCell.h"
+#import "GMHTTPNetworking.h"
+
 
 @interface GMDetailMerchantViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -55,7 +57,7 @@ static NSString *infoCell = @"infoCell";
     // 评价cell
 }
 
-- (void)initData {
+- (void)initTableViewData {
     
 }
 
@@ -125,6 +127,8 @@ static NSString *infoCell = @"infoCell";
     
     
 }
+
+
 
 //-(void)testCellData:(GMDetailMerchantViewController *)cell {
 //    cell.nameLabel.text = @"小马家常菜";
