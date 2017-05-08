@@ -9,7 +9,7 @@
 
 #import "GMNearbyViewController.h"
 #import "GMNearbySellerTableViewCell.h"
-#import "GMDetailMerchantViewController.h"
+#import "GMDetailGoodsViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <YYModel/YYModel.h>
 
@@ -124,10 +124,7 @@ static NSString *cellName = @"nearbyCell";
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    GMDetailMerchantViewController *detailMerchantVC = [[GMDetailMerchantViewController alloc] init];
-    // setup
     
-    [self.navigationController pushViewController:detailMerchantVC animated:YES];
 }
 
 -(void)testCellData:(GMNearbySellerTableViewCell *)cell {

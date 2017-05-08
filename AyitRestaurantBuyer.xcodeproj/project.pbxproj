@@ -11,14 +11,16 @@
 		222FC7071EAB450400DE91EB /* GMCarouselCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC7061EAB450400DE91EB /* GMCarouselCell.m */; };
 		222FC70D1EAB4C0600DE91EB /* GMMerchantItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC70C1EAB4C0600DE91EB /* GMMerchantItem.m */; };
 		222FC7101EAB4CBE00DE91EB /* GMMerchantData.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC70F1EAB4CBE00DE91EB /* GMMerchantData.m */; };
-		222FC7171EAB4E1600DE91EB /* GMDetailMerchantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC7161EAB4E1600DE91EB /* GMDetailMerchantViewController.m */; };
-		222FC71C1EAB4EB100DE91EB /* GMDetailMerchantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222FC71B1EAB4EB100DE91EB /* GMDetailMerchantTableViewCell.xib */; };
 		222FC71F1EAB50B700DE91EB /* GMPriceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC71E1EAB50B700DE91EB /* GMPriceTableViewCell.m */; };
 		222FC7221EAB50D800DE91EB /* GMInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC7211EAB50D800DE91EB /* GMInfoTableViewCell.m */; };
 		222FC7251EAB86D900DE91EB /* GMMyHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC7241EAB86D900DE91EB /* GMMyHeadTableViewCell.m */; };
 		222FC7271EAB88BB00DE91EB /* MyHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222FC7261EAB88BB00DE91EB /* MyHeadView.xib */; };
 		222FC72B1EAC4E0A00DE91EB /* GMUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC72A1EAC4E0A00DE91EB /* GMUserDefaults.m */; };
 		222FC7301EAC511700DE91EB /* GMLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC72F1EAC511700DE91EB /* GMLocation.m */; };
+		22373EF71EC02A4400CD78E2 /* GMSubmitOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22373EF61EC02A4400CD78E2 /* GMSubmitOrderViewController.m */; };
+		22373EFA1EC0322400CD78E2 /* GMSubmitOrderNoLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22373EF91EC0322400CD78E2 /* GMSubmitOrderNoLoginViewController.m */; };
+		22373EFF1EC0332700CD78E2 /* GMSubmitOrderBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22373EFE1EC0332700CD78E2 /* GMSubmitOrderBottomView.m */; };
+		22373F071EC0386300CD78E2 /* GMSubmitDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22373F061EC0386300CD78E2 /* GMSubmitDetailInfoViewController.m */; };
 		227C01701E9CDB9200E05BF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C016F1E9CDB9200E05BF9 /* main.m */; };
 		227C01731E9CDB9200E05BF9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C01721E9CDB9200E05BF9 /* AppDelegate.m */; };
 		227C017B1E9CDB9200E05BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227C017A1E9CDB9200E05BF9 /* Assets.xcassets */; };
@@ -37,10 +39,12 @@
 		2288688D1EA70B8A00564E0F /* AccountItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2288688C1EA70B8A00564E0F /* AccountItem.m */; };
 		228868931EA72F5900564E0F /* GMGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 228868921EA72F5900564E0F /* GMGoodsTableViewCell.m */; };
 		22D97C271EAF577C003B242B /* GMHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D97C261EAF577C003B242B /* GMHTTPNetworking.m */; };
+		22E0778E1EBEA40900BD728E /* GMDetailGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0778D1EBEA40900BD728E /* GMDetailGoodsViewController.m */; };
+		22E077901EBEA41D00BD728E /* GMDetailMerchantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E0778F1EBEA41D00BD728E /* GMDetailMerchantTableViewCell.xib */; };
 		2CC7721E0E121A7230AEDED6 /* Pods_AyitRestaurantBuyer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9583783A807C538F5D62DED2 /* Pods_AyitRestaurantBuyer.framework */; };
 		6B0B45DE14AA43E08B1DE083 /* Pods_AyitRestaurantBuyerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DE97FA91C60B524BDD0DE5 /* Pods_AyitRestaurantBuyerUITests.framework */; };
 		A9C1DD3835A4B4080D8B9361 /* Pods_AyitRestaurantBuyerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2DE3FA2CBD529901CA3E67 /* Pods_AyitRestaurantBuyerTests.framework */; };
-		F36BF0D61EAF9E6900E2D9D6 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F36BF0D51EAF9E6900E2D9D6 /* RegisterViewController.xib */; };
+		F36BF0D61EAF9E6900E2D9D6 /* RegisterViewControllerDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = F36BF0D51EAF9E6900E2D9D6 /* RegisterViewControllerDemo.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,9 +74,6 @@
 		222FC70C1EAB4C0600DE91EB /* GMMerchantItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMMerchantItem.m; path = Classes/Nearby/Model/GMMerchantItem.m; sourceTree = "<group>"; };
 		222FC70E1EAB4CBE00DE91EB /* GMMerchantData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMMerchantData.h; path = Classes/Nearby/Model/GMMerchantData.h; sourceTree = "<group>"; };
 		222FC70F1EAB4CBE00DE91EB /* GMMerchantData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMMerchantData.m; path = Classes/Nearby/Model/GMMerchantData.m; sourceTree = "<group>"; };
-		222FC7151EAB4E1600DE91EB /* GMDetailMerchantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMDetailMerchantViewController.h; path = Classes/Nearby/DetailMerchant/Controller/GMDetailMerchantViewController.h; sourceTree = "<group>"; };
-		222FC7161EAB4E1600DE91EB /* GMDetailMerchantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMDetailMerchantViewController.m; path = Classes/Nearby/DetailMerchant/Controller/GMDetailMerchantViewController.m; sourceTree = "<group>"; };
-		222FC71B1EAB4EB100DE91EB /* GMDetailMerchantTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GMDetailMerchantTableViewCell.xib; path = Classes/Nearby/DetailMerchant/View/GMDetailMerchantTableViewCell.xib; sourceTree = "<group>"; };
 		222FC71D1EAB50B700DE91EB /* GMPriceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMPriceTableViewCell.h; path = Classes/Nearby/View/GMPriceTableViewCell.h; sourceTree = "<group>"; };
 		222FC71E1EAB50B700DE91EB /* GMPriceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMPriceTableViewCell.m; path = Classes/Nearby/View/GMPriceTableViewCell.m; sourceTree = "<group>"; };
 		222FC7201EAB50D800DE91EB /* GMInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMInfoTableViewCell.h; path = Classes/Nearby/View/GMInfoTableViewCell.h; sourceTree = "<group>"; };
@@ -84,6 +85,14 @@
 		222FC72A1EAC4E0A00DE91EB /* GMUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMUserDefaults.m; path = Classes/Helper/DB/GMUserDefaults.m; sourceTree = "<group>"; };
 		222FC72E1EAC511700DE91EB /* GMLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMLocation.h; path = Classes/Helper/Location/GMLocation.h; sourceTree = "<group>"; };
 		222FC72F1EAC511700DE91EB /* GMLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMLocation.m; path = Classes/Helper/Location/GMLocation.m; sourceTree = "<group>"; };
+		22373EF51EC02A4400CD78E2 /* GMSubmitOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMSubmitOrderViewController.h; path = Classes/Home/SubmitOrder/Controller/GMSubmitOrderViewController.h; sourceTree = "<group>"; };
+		22373EF61EC02A4400CD78E2 /* GMSubmitOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMSubmitOrderViewController.m; path = Classes/Home/SubmitOrder/Controller/GMSubmitOrderViewController.m; sourceTree = "<group>"; };
+		22373EF81EC0322400CD78E2 /* GMSubmitOrderNoLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMSubmitOrderNoLoginViewController.h; path = Classes/Home/SubmitOrder/Controller/GMSubmitOrderNoLoginViewController.h; sourceTree = "<group>"; };
+		22373EF91EC0322400CD78E2 /* GMSubmitOrderNoLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMSubmitOrderNoLoginViewController.m; path = Classes/Home/SubmitOrder/Controller/GMSubmitOrderNoLoginViewController.m; sourceTree = "<group>"; };
+		22373EFD1EC0332700CD78E2 /* GMSubmitOrderBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMSubmitOrderBottomView.h; path = Classes/Home/SubmitOrder/View/GMSubmitOrderBottomView.h; sourceTree = "<group>"; };
+		22373EFE1EC0332700CD78E2 /* GMSubmitOrderBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMSubmitOrderBottomView.m; path = Classes/Home/SubmitOrder/View/GMSubmitOrderBottomView.m; sourceTree = "<group>"; };
+		22373F051EC0386300CD78E2 /* GMSubmitDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMSubmitDetailInfoViewController.h; path = Classes/Home/SubmitDetailInfo/Controller/GMSubmitDetailInfoViewController.h; sourceTree = "<group>"; };
+		22373F061EC0386300CD78E2 /* GMSubmitDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMSubmitDetailInfoViewController.m; path = Classes/Home/SubmitDetailInfo/Controller/GMSubmitDetailInfoViewController.m; sourceTree = "<group>"; };
 		227C016B1E9CDB9200E05BF9 /* AyitRestaurantBuyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AyitRestaurantBuyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		227C016F1E9CDB9200E05BF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		227C01711E9CDB9200E05BF9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -121,6 +130,9 @@
 		228868921EA72F5900564E0F /* GMGoodsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMGoodsTableViewCell.m; path = Classes/Home/View/GMGoodsTableViewCell.m; sourceTree = "<group>"; };
 		22D97C251EAF577C003B242B /* GMHTTPNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMHTTPNetworking.h; path = Classes/Helper/Networking/GMHTTPNetworking.h; sourceTree = "<group>"; };
 		22D97C261EAF577C003B242B /* GMHTTPNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMHTTPNetworking.m; path = Classes/Helper/Networking/GMHTTPNetworking.m; sourceTree = "<group>"; };
+		22E0778C1EBEA40900BD728E /* GMDetailGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMDetailGoodsViewController.h; path = Classes/Home/DetailGoods/Controller/GMDetailGoodsViewController.h; sourceTree = "<group>"; };
+		22E0778D1EBEA40900BD728E /* GMDetailGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMDetailGoodsViewController.m; path = Classes/Home/DetailGoods/Controller/GMDetailGoodsViewController.m; sourceTree = "<group>"; };
+		22E0778F1EBEA41D00BD728E /* GMDetailMerchantTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GMDetailMerchantTableViewCell.xib; path = Classes/Home/DetailGoods/View/GMDetailMerchantTableViewCell.xib; sourceTree = "<group>"; };
 		7BDFF6CEA6649915D3D7BD45 /* Pods-AyitRestaurantBuyerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantBuyerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantBuyerTests/Pods-AyitRestaurantBuyerTests.release.xcconfig"; sourceTree = "<group>"; };
 		8D1B13B7296F37E97F9EB0D8 /* Pods-AyitRestaurantBuyer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantBuyer.release.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantBuyer/Pods-AyitRestaurantBuyer.release.xcconfig"; sourceTree = "<group>"; };
 		9583783A807C538F5D62DED2 /* Pods_AyitRestaurantBuyer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AyitRestaurantBuyer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,7 +141,7 @@
 		D5000C32C2224A3CC21F6E51 /* Pods-AyitRestaurantBuyerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantBuyerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantBuyerUITests/Pods-AyitRestaurantBuyerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E8DE97FA91C60B524BDD0DE5 /* Pods_AyitRestaurantBuyerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AyitRestaurantBuyerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21061536E077872014A33BD /* Pods-AyitRestaurantBuyer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantBuyer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantBuyer/Pods-AyitRestaurantBuyer.debug.xcconfig"; sourceTree = "<group>"; };
-		F36BF0D51EAF9E6900E2D9D6 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterViewController.xib; path = Classes/Login/Controller/RegisterViewController.xib; sourceTree = "<group>"; };
+		F36BF0D51EAF9E6900E2D9D6 /* RegisterViewControllerDemo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterViewControllerDemo.xib; path = Classes/Login/Controller/RegisterViewControllerDemo.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,21 +172,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		222FC7111EAB4DCE00DE91EB /* DetailMerchant */ = {
+		222FC7111EAB4DCE00DE91EB /* DetailGoods */ = {
 			isa = PBXGroup;
 			children = (
 				222FC7141EAB4DEC00DE91EB /* Model */,
 				222FC7131EAB4DE800DE91EB /* View */,
 				222FC7121EAB4DE300DE91EB /* Controller */,
 			);
-			name = DetailMerchant;
+			name = DetailGoods;
 			sourceTree = "<group>";
 		};
 		222FC7121EAB4DE300DE91EB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				222FC7151EAB4E1600DE91EB /* GMDetailMerchantViewController.h */,
-				222FC7161EAB4E1600DE91EB /* GMDetailMerchantViewController.m */,
+				22E0778C1EBEA40900BD728E /* GMDetailGoodsViewController.h */,
+				22E0778D1EBEA40900BD728E /* GMDetailGoodsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -182,7 +194,7 @@
 		222FC7131EAB4DE800DE91EB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				222FC71B1EAB4EB100DE91EB /* GMDetailMerchantTableViewCell.xib */,
+				22E0778F1EBEA41D00BD728E /* GMDetailMerchantTableViewCell.xib */,
 				222FC71D1EAB50B700DE91EB /* GMPriceTableViewCell.h */,
 				222FC71E1EAB50B700DE91EB /* GMPriceTableViewCell.m */,
 				222FC7201EAB50D800DE91EB /* GMInfoTableViewCell.h */,
@@ -221,6 +233,83 @@
 			children = (
 			);
 			name = Maps;
+			sourceTree = "<group>";
+		};
+		22373EF41EC02A1400CD78E2 /* SubmitOrder */ = {
+			isa = PBXGroup;
+			children = (
+				22373EFC1EC032FB00CD78E2 /* View */,
+				22373EFB1EC032F200CD78E2 /* Controller */,
+			);
+			name = SubmitOrder;
+			sourceTree = "<group>";
+		};
+		22373EFB1EC032F200CD78E2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				22373EF51EC02A4400CD78E2 /* GMSubmitOrderViewController.h */,
+				22373EF61EC02A4400CD78E2 /* GMSubmitOrderViewController.m */,
+				22373EF81EC0322400CD78E2 /* GMSubmitOrderNoLoginViewController.h */,
+				22373EF91EC0322400CD78E2 /* GMSubmitOrderNoLoginViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		22373EFC1EC032FB00CD78E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22373EFD1EC0332700CD78E2 /* GMSubmitOrderBottomView.h */,
+				22373EFE1EC0332700CD78E2 /* GMSubmitOrderBottomView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		22373F031EC0382200CD78E2 /* SubmitDetailInfo */ = {
+			isa = PBXGroup;
+			children = (
+				22373F041EC0383700CD78E2 /* Controller */,
+			);
+			name = SubmitDetailInfo;
+			sourceTree = "<group>";
+		};
+		22373F041EC0383700CD78E2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				22373F051EC0386300CD78E2 /* GMSubmitDetailInfoViewController.h */,
+				22373F061EC0386300CD78E2 /* GMSubmitDetailInfoViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		223791291EB96B4100ECAE48 /* GMDetailMerchant */ = {
+			isa = PBXGroup;
+			children = (
+				2237912C1EB96B7B00ECAE48 /* Model */,
+				2237912B1EB96B7700ECAE48 /* View */,
+				2237912A1EB96B7200ECAE48 /* Controller */,
+			);
+			name = GMDetailMerchant;
+			sourceTree = "<group>";
+		};
+		2237912A1EB96B7200ECAE48 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2237912B1EB96B7700ECAE48 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2237912C1EB96B7B00ECAE48 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		227C01621E9CDB9200E05BF9 = {
@@ -348,6 +437,9 @@
 		227C01AD1E9CDC5C00E05BF9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				22373F031EC0382200CD78E2 /* SubmitDetailInfo */,
+				22373EF41EC02A1400CD78E2 /* SubmitOrder */,
+				222FC7111EAB4DCE00DE91EB /* DetailGoods */,
 				227C01BD1E9CDFB800E05BF9 /* Controller */,
 				227C01BC1E9CDFB700E05BF9 /* View */,
 				227C01BB1E9CDFB600E05BF9 /* Model */,
@@ -358,7 +450,7 @@
 		227C01AE1E9CDC9300E05BF9 /* Nearby */ = {
 			isa = PBXGroup;
 			children = (
-				222FC7111EAB4DCE00DE91EB /* DetailMerchant */,
+				223791291EB96B4100ECAE48 /* GMDetailMerchant */,
 				227C01BA1E9CDFB400E05BF9 /* Controller */,
 				227C01B91E9CDFB300E05BF9 /* View */,
 				227C01B81E9CDFB200E05BF9 /* Model */,
@@ -510,7 +602,7 @@
 				228868851EA70B4F00564E0F /* LoginViewController.m */,
 				228868861EA70B4F00564E0F /* RegisterViewController.h */,
 				228868871EA70B4F00564E0F /* RegisterViewController.m */,
-				F36BF0D51EAF9E6900E2D9D6 /* RegisterViewController.xib */,
+				F36BF0D51EAF9E6900E2D9D6 /* RegisterViewControllerDemo.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -682,11 +774,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				222FC71C1EAB4EB100DE91EB /* GMDetailMerchantTableViewCell.xib in Resources */,
-				F36BF0D61EAF9E6900E2D9D6 /* RegisterViewController.xib in Resources */,
+				F36BF0D61EAF9E6900E2D9D6 /* RegisterViewControllerDemo.xib in Resources */,
 				227C017E1E9CDB9200E05BF9 /* LaunchScreen.storyboard in Resources */,
 				222FC7271EAB88BB00DE91EB /* MyHeadView.xib in Resources */,
 				227C017B1E9CDB9200E05BF9 /* Assets.xcassets in Resources */,
+				22E077901EBEA41D00BD728E /* GMDetailMerchantTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,7 +841,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		62BDE90693D0E814374F1A6B /* [CP] Copy Pods Resources */ = {
@@ -794,7 +886,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9DD8DAA1D13F155ADB4DBF82 /* [CP] Embed Pods Frameworks */ = {
@@ -824,7 +916,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B7F268A08EA3ACB463136188 /* [CP] Copy Pods Resources */ = {
@@ -856,11 +948,12 @@
 				227C01AC1E9CDC3A00E05BF9 /* GMTabBarViewController.m in Sources */,
 				222FC7251EAB86D900DE91EB /* GMMyHeadTableViewCell.m in Sources */,
 				228868891EA70B4F00564E0F /* LoginViewController.m in Sources */,
+				22373F071EC0386300CD78E2 /* GMSubmitDetailInfoViewController.m in Sources */,
 				228868881EA70B4F00564E0F /* ForgetPasswordViewController.m in Sources */,
 				227C01C31E9CE07000E05BF9 /* GMMyViewController.m in Sources */,
 				227C01CC1E9CE24C00E05BF9 /* GMNavigationViewController.m in Sources */,
+				22E0778E1EBEA40900BD728E /* GMDetailGoodsViewController.m in Sources */,
 				227C01C01E9CDFFF00E05BF9 /* GMOrderManagementTableViewController.m in Sources */,
-				222FC7171EAB4E1600DE91EB /* GMDetailMerchantViewController.m in Sources */,
 				227C01C61E9CE08C00E05BF9 /* GMNearbyViewController.m in Sources */,
 				227C01731E9CDB9200E05BF9 /* AppDelegate.m in Sources */,
 				222EE33F1EA778DF001F707B /* GMNearbySellerTableViewCell.m in Sources */,
@@ -869,10 +962,13 @@
 				222FC7101EAB4CBE00DE91EB /* GMMerchantData.m in Sources */,
 				2288688A1EA70B4F00564E0F /* RegisterViewController.m in Sources */,
 				222FC7301EAC511700DE91EB /* GMLocation.m in Sources */,
+				22373EF71EC02A4400CD78E2 /* GMSubmitOrderViewController.m in Sources */,
 				222FC7071EAB450400DE91EB /* GMCarouselCell.m in Sources */,
+				22373EFA1EC0322400CD78E2 /* GMSubmitOrderNoLoginViewController.m in Sources */,
 				227C01701E9CDB9200E05BF9 /* main.m in Sources */,
 				222FC71F1EAB50B700DE91EB /* GMPriceTableViewCell.m in Sources */,
 				222FC7221EAB50D800DE91EB /* GMInfoTableViewCell.m in Sources */,
+				22373EFF1EC0332700CD78E2 /* GMSubmitOrderBottomView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

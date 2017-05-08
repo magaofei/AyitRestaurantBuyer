@@ -7,11 +7,12 @@
 //
 
 #import "GMPriceTableViewCell.h"
+#import "GMDetailGoodsViewController.h"
 #import <Masonry/Masonry.h>
 
 @interface GMPriceTableViewCell ()
 
-@property (nonatomic, strong) UIButton *buyButton;
+
 
 @end
 @implementation GMPriceTableViewCell
@@ -49,10 +50,21 @@
     
     _buyButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_buyButton setTitle:@"立即抢购" forState:UIControlStateNormal];
+    [_buyButton setBackgroundColor:[UIColor colorWithRed: 255.0/255.0 green: 171.0/255.0 blue: 10.0/255.0 alpha: 1.0]];
+    
+    
+    _buyButton.titleLabel.font = [UIFont systemFontOfSize:15];
+    [_buyButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [_buyButton addTarget:[GMDetailGoodsViewController class] action:@selector(clickBuyGoods) forControlEvents:UIControlEventTouchUpInside];
+    
     [self addSubview:_buyButton];
     
     [self initLayoutSubviews];
 }
+
+//- (void)clickBuyButton {
+//    NSLog(@"%s", __func__);
+//}
 
 - (void)initLayoutSubviews {
     [_priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {

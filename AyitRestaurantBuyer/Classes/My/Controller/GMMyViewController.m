@@ -8,6 +8,8 @@
 
 #import "GMMyViewController.h"
 #import <Masonry/Masonry.h>
+#import "GMMyHeadTableViewCell.h"
+#import "LoginViewController.h"
 
 @interface GMMyViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -18,6 +20,7 @@
 @end
 
 static NSString *cellName = @"MyCell";
+static NSString *myHeadCell = @"myHeadCell";
 @implementation GMMyViewController
 
 
@@ -46,7 +49,6 @@ static NSString *cellName = @"MyCell";
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
     
-    self.myTableView.rowHeight = 50;
     
     [self initLayoutSubviews];
 
@@ -65,11 +67,26 @@ static NSString *cellName = @"MyCell";
 
 #pragma mark - dataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.listArr.count;
+    if (section == 0) {
+        return 1;
+    } else {
+        return self.listArr.count;
+    }
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return 100;
+    } else {
+        return 50;
+    }
+    
+    
 }
 
 
@@ -80,15 +97,30 @@ static NSString *cellName = @"MyCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
+    if (indexPath.section == 0) {
+        GMMyHeadTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:myHeadCell];
+        if (!cell) {
+            cell = [[GMMyHeadTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:myHeadCell];
+            
+        }
         
+        cell.nameLabel.text = @"李俊龙";
+        return cell;
+    } else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
+            
+        }
+        cell.textLabel.text = self.listArr[indexPath.row];
+        return cell;
     }
     
     
     
-    cell.textLabel.text = self.listArr[indexPath.row];
+    
+    
+    
     
     
     
@@ -96,14 +128,25 @@ static NSString *cellName = @"MyCell";
     // cell setup
     
     
-    return cell;
+    
 }
 
 // 取消选中
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    
     [self.myTableView deselectRowAtIndexPath:indexPath animated:YES];
     
     // 跳转
+    if (indexPath.section == 0) {
+        LoginViewController *loginVC = [[LoginViewController alloc] init];
+        UINavigationController *loginNav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+//        [self.navigationController pushViewController:loginVC animated:YES];
+        [self presentViewController:loginNav animated:YES completion:nil];
+       
+    }
+    
     
 }
 

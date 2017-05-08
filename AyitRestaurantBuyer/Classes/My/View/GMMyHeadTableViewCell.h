@@ -10,4 +10,8 @@
 
 @interface GMMyHeadTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) UIImageView *iconView;
+
+@property (nonatomic, strong) UILabel *nameLabel;
+
 @end

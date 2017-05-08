@@ -21,7 +21,7 @@
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
 #import "ForgetPasswordViewController.h"
-
+#import "GMHTTPNetworking.h"
 #import <Masonry/Masonry.h>
 
 @interface LoginViewController ()
@@ -36,6 +36,9 @@
 @property (nonatomic, strong) UILabel *passwordLabel;
 @property (nonatomic, strong) UIImageView *iconLogoView;
 @property (nonatomic, strong) UIView *loginInfoView;
+
+@property (nonatomic, copy) NSString *account;
+@property (nonatomic, copy) NSString *password;
 
 
 /**
@@ -65,8 +68,8 @@
     [self initSubviews];
     
     // 默认
-    _accountTextField.text = @"admin";
-    _passwordTextField.text = @"test";
+    _accountTextField.text = @"18603822757";
+    _passwordTextField.text = @"123456";
 }
 
 
@@ -312,27 +315,71 @@
 #pragma mark - 登录请求
 - (BOOL)cancelLogin{
     //用户名admin  密码test
-    if ([_accountTextField.text isEqualToString:@"admin"] && [_passwordTextField.text isEqualToString:@"test"]) {
-        //验证成功
-        [self showMainTabBarViewController];//跳转
-        _tipLabel.hidden = YES;
-        _tipImageView.hidden = YES;
-        return YES;  //验证成功
-    } else {
-        NSString *errorTip = @"";
-        if (_accountTextField.text.length == 0) {
-            errorTip = @"请输入用户名";
-        } else if (_passwordTextField.text.length == 0) {
-            errorTip = @"请输入密码";
-        } else {
-            errorTip = @"用户名或密码输入有误";
+//    /server/authority/user/user/logon
+    GMHTTPNetworking *manager = [GMHTTPNetworking sharedManager];
+    NSDictionary *p = @{
+                        @"phone": _accountTextField.text,
+                        @"password": _passwordTextField.text
+                        
+                        };
+    
+    __block BOOL result = NO;
+    
+    [manager POST:@"/server/authority/user/user/logon" parameters:p progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (responseObject == nil) {
+            return ;
         }
-        _tipImageView.hidden = NO;
-        _tipLabel.hidden = NO;
-        [_tipLabel setText:errorTip];
+        if ([responseObject[@"success"] boolValue] == 1) {
+            [[NSUserDefaults standardUserDefaults] setValue:@"id" forKey:@"id"];
+            result = YES;
+            
+            //验证成功
+            [self showMainTabBarViewController];//跳转
+            _tipLabel.hidden = YES;
+            _tipImageView.hidden = YES;
+            
+        } else {
+            // 登录失败
+            NSString *errorTip = @"";
+            if (_accountTextField.text.length == 0) {
+                errorTip = @"请输入用户名";
+            } else if (_passwordTextField.text.length == 0) {
+                errorTip = @"请输入密码";
+            } else {
+                errorTip = @"用户名或密码输入有误";
+            }
+            _tipImageView.hidden = NO;
+            _tipLabel.hidden = NO;
+            [_tipLabel setText:errorTip];
+            result = NO;
+        }
         
-    }
-    return NO;
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
+//    if ([_accountTextField.text isEqualToString:@"admin"] && [_passwordTextField.text isEqualToString:@"test"]) {
+//        //验证成功
+//        [self showMainTabBarViewController];//跳转
+//        _tipLabel.hidden = YES;
+//        _tipImageView.hidden = YES;
+//        return YES;  //验证成功
+//    } else {
+//        NSString *errorTip = @"";
+//        if (_accountTextField.text.length == 0) {
+//            errorTip = @"请输入用户名";
+//        } else if (_passwordTextField.text.length == 0) {
+//            errorTip = @"请输入密码";
+//        } else {
+//            errorTip = @"用户名或密码输入有误";
+//        }
+//        _tipImageView.hidden = NO;
+//        _tipLabel.hidden = NO;
+//        [_tipLabel setText:errorTip];
+//        
+//    }
+    
+    return result;
     
     
 }
@@ -388,6 +435,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setAccount:(NSString *)account {
+    _account = _accountTextField.text;
+}
+
+- (void)setPassword:(NSString *)password {
+    _password = _passwordTextField.text;
+}
 /*
 #pragma mark - Navigation
 

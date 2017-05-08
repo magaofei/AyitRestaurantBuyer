@@ -7,7 +7,8 @@ target 'AyitRestaurantBuyer' do
     pod 'AFNetworking'
     pod 'SDWebImage'
     pod 'YYModel'
-    pod 'Masonry' 
+    pod 'Masonry'
+    pod 'SVProgressHUD'
 
   # Pods for AyitRestaurantBuyer
 

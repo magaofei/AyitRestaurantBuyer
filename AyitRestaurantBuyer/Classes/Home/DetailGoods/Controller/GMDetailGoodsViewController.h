@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GMDetailMerchantViewController : UIViewController
+@interface GMDetailGoodsViewController : UIViewController
 
 @property (nonatomic, strong) NSString *id;
+
+- (void)clickBuyGoods;
 
 @end

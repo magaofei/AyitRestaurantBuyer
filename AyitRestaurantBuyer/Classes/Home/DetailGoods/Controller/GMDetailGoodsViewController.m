@@ -6,16 +6,22 @@
 //  Copyright © 2017年 Gaofei Ma. All rights reserved.
 //
 
-#import "GMDetailMerchantViewController.h"
+#import "GMDetailGoodsViewController.h"
 #import "GMCarouselCell.h"
 #import "GMPriceTableViewCell.h"
 #import "GMInfoTableViewCell.h"
 #import "GMHTTPNetworking.h"
+#import "GMSubmitOrderViewController.h"
 
-
-@interface GMDetailMerchantViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface GMDetailGoodsViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
+
+@property (nonatomic, strong) UIButton *backButton;
+
+@property (nonatomic, strong) UIButton *buyButton;
+
+@property (nonatomic, copy) NSString *ID;
 
 @end
 
@@ -23,7 +29,7 @@ static NSString *carouselCell = @"carouselCell";
 static NSString *priceCell = @"priceCell";
 static NSString *infoCell = @"infoCell";
 
-@implementation GMDetailMerchantViewController
+@implementation GMDetailGoodsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,15 +39,24 @@ static NSString *infoCell = @"infoCell";
     
     // 1. 绘制界面
     [self initSubviews];
+    
+    [self initNav];
     // 2. 接收数据 请求
     
 }
 
-
+- (void)initNav {
+    self.navigationController.navigationBarHidden = YES;
+    
+    
+    
+}
 /**
  绘制界面
  */
 - (void)initSubviews {
+    
+    
     // 轮播图
     _tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _tableView.dataSource = self;
@@ -49,16 +64,65 @@ static NSString *infoCell = @"infoCell";
     _tableView.allowsSelection = NO;
     [self.view addSubview: _tableView];
     
+
+    // 返回按钮
+//    _backButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    _backButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [_backButton setImage:[UIImage imageNamed:@"back-button"] forState:UIControlStateNormal];
+    [_backButton sizeToFit];
+    [_backButton addTarget:self action:@selector(clickBackButton) forControlEvents:UIControlEventTouchUpInside];
+//    self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithCustomView:_backButton];
+    [self.view addSubview:_backButton];
+    _backButton.center = CGPointMake(35, 40);
+    
+    
     
     // 价格cell
     
     // 信息cell
     
     // 评价cell
+#pragma mark - 购买按钮, 然后发送通知到购物车
+    
 }
 
 - (void)initTableViewData {
     
+}
+
+
+/**
+ 立即抢购
+ */
+- (void)clickBuyGoods {
+    // 提交订单页面, 传递模型
+    
+    GMSubmitOrderViewController *submitOrderVC = [[GMSubmitOrderViewController alloc] init];
+    
+    // 判断是否登录, 没有登录, 用快捷登录, 已经登录, 直接购买
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"id"]) {
+        _ID = [[NSUserDefaults standardUserDefaults] valueForKey:@"id"];
+        submitOrderVC.loginStatus = YES;
+    } else {
+        submitOrderVC.loginStatus = NO;
+    }
+    
+    
+    
+    [self.navigationController pushViewController:submitOrderVC animated:YES];
+    
+    // 传递模型给购物车
+    
+    
+    
+}
+
+
+/**
+ 点击返回按钮
+ */
+- (void)clickBackButton {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,6 +130,8 @@ static NSString *infoCell = @"infoCell";
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - tableView
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -96,6 +162,7 @@ static NSString *infoCell = @"infoCell";
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             GMCarouselCell *cell = [tableView dequeueReusableCellWithIdentifier:carouselCell];
+            
             if (!cell) {
                 cell = [[GMCarouselCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:carouselCell];
             }
@@ -107,6 +174,9 @@ static NSString *infoCell = @"infoCell";
             if (!cell) {
                 cell = [[GMPriceTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:priceCell];
             }
+            
+            _buyButton = cell.buyButton;
+            [_buyButton addTarget:self action:@selector(clickBuyGoods) forControlEvents:UIControlEventTouchUpInside];
             cell.priceLabel.text = @"$27.8";
             cell.originPriceLabel.text = @"$42.9";
             return cell;

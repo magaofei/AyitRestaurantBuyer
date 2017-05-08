@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) UILabel *originPriceLabel;
 
+@property (nonatomic, strong) UIButton *buyButton;
 
 
 @end

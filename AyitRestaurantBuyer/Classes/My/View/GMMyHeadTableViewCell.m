@@ -12,9 +12,7 @@
 
 @interface GMMyHeadTableViewCell ()
 
-@property (nonatomic, strong) UIImageView *iconView;
 
-@property (nonatomic, strong) UILabel *nameLabel;
 
 
 
@@ -56,7 +54,9 @@
 
 - (void)initLayoutSubviews {
     [_iconView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
+        make.top.left.equalTo(self).offset(10);
+        make.bottom.equalTo(self).offset(-10);
+        make.width.equalTo(@80);
     }];
     
     [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {

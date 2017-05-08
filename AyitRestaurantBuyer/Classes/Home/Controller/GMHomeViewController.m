@@ -13,6 +13,8 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 #import <Masonry/Masonry.h>
+#import "GMDetailGoodsViewController.h"
+
 #define screenWidth [UIScreen mainScreen].bounds.size.width
 #define screenHeight [UIScreen mainScreen].bounds.size.height
 
@@ -58,8 +60,13 @@ static NSUInteger carouselViewHeight = 200;
     self.view.backgroundColor = [UIColor whiteColor];
     
     
-    
+    [self initNav];
     [self initSubviews];
+    
+}
+
+- (void)initNav {
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)initSubviews {
@@ -169,6 +176,12 @@ static NSUInteger carouselViewHeight = 200;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // 取消选择
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    // 跳转
+    GMDetailGoodsViewController *detailMerchantVC = [[GMDetailGoodsViewController alloc] init];
+    // setup
+    
+    [self.navigationController pushViewController:detailMerchantVC animated:YES];
 }
 
 -(void)testCellData:(GMGoodsTableViewCell *)cell {
