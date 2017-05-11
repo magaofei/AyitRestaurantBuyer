@@ -16,6 +16,8 @@
 #import "GMHTTPNetworking.h"
 #import "GMMerchantItem.h"
 
+#import "GMMerchantViewController.h"
+
 @interface GMNearbyViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *items;
@@ -25,6 +27,8 @@
 @end
 
 static NSString *cellName = @"nearbyCell";
+static NSString *carouselCell = @"carouselCell";
+static NSUInteger carouselViewHeight = 200;
 @implementation GMNearbyViewController
 
 - (void)viewDidLoad {
@@ -57,7 +61,7 @@ static NSString *cellName = @"nearbyCell";
     _tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _tableView.dataSource = self;
     _tableView.delegate = self;
-    _tableView.rowHeight = 130;
+    _tableView.rowHeight = 100;
     [self.view addSubview: _tableView];
 }
 
@@ -71,8 +75,8 @@ static NSString *cellName = @"nearbyCell";
         if (!responseObject) {
             NSLog(@"没有数据");
             return ;
-            
         }
+        
         NSLog(@"%@", responseObject[@"success"]);
         NSDictionary *d = responseObject;
         GMMerchantData *item;
@@ -108,12 +112,15 @@ static NSString *cellName = @"nearbyCell";
     if (!item) {
         return cell;
     }
-    cell.nameLabel.text = item.contact;
-    cell.phoneLabel.text = item.phone;
+    
+    // cell setup
+    
+//    cell.nameLabel.text = item.contact;
+//    cell.phoneLabel.text = item.phone;
     
     
     
-//    [self testCellData:cell];
+    [self testCellData:cell];
     
     return cell;
     
@@ -124,18 +131,38 @@ static NSString *cellName = @"nearbyCell";
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    // 跳转到商家详情页
+    GMMerchantViewController *merchantVC = [[GMMerchantViewController alloc] init];
+    
+//    if (_items) {
+//        GMMerchantData *item = _items[indexPath.row];
+//        merchantVC.merchantItem = item;
+//    }
+    
+    merchantVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:merchantVC animated:YES];
+    
     
 }
 
 -(void)testCellData:(GMNearbySellerTableViewCell *)cell {
-    cell.nameLabel.text = @"小马家常菜";
+//    cell.nameLabel.text = @"小马家常菜";
+//    
+//    [cell.goodsIcon sd_setImageWithURL:[NSURL URLWithString:@""]];
+//    cell.phoneLabel.text = @"手机号:19603822432";
+//    cell.goodsTitleLabel.text = @"红烧带鱼+米饭+豆角茄子";
+//    cell.orderTimeLabel.text = @"2017.04.12 12:30:02";
+//    cell.goodsPriceLabel.text = @"$216.50";
     
-    [cell.goodsIcon sd_setImageWithURL:[NSURL URLWithString:@"http://img.spriteapp.cn/ugc/2016/03/10/092924_69853.jpg"]];
-    cell.phoneLabel.text = @"手机号:19603822432";
-    cell.goodsTitleLabel.text = @"红烧带鱼+米饭+豆角茄子";
-    cell.orderTimeLabel.text = @"2017.04.12 12:30:02";
-    cell.goodsPriceLabel.text = @"$216.50";
+    //https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494435312216&di=9b089188954a5dc82837a1a7a24dc66b&imgtype=0&src=http%3A%2F%2Fs1.nuomi.bdimg.com%2Fupload%2Fdeal%2F2014%2F6%2FV_L%2F1151192-fngqb4b3s6-3204626805425021.jpg
     //    cell.orderStatusLabel.text = @"状态:已接受";
+    
+    [cell.merchantIcon sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494435312216&di=9b089188954a5dc82837a1a7a24dc66b&imgtype=0&src=http%3A%2F%2Fs1.nuomi.bdimg.com%2Fupload%2Fdeal%2F2014%2F6%2FV_L%2F1151192-fngqb4b3s6-3204626805425021.jpg"]];
+    cell.merchantTitleLabel.text = @"定正成都冒菜";
+    cell.salesLabel.text = @"月售17单";
+    cell.locationInfoLabel.text = @"1.7km";
+    cell.discountLabel.text = @"新用户下单立减7.0";
+    
     
 }
 /*

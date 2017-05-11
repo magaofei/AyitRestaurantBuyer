@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "84DE4E4ED6247A6A4C5D46AB7F4BA01FC29BC806",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "CF33D120E5A765E02C247C9B74AA97FE1E98A529" : 9223372036854775807,
+    "84DE4E4ED6247A6A4C5D46AB7F4BA01FC29BC806" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8B348221-D8DD-406C-A5E5-A3D9E48F9D75",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "CF33D120E5A765E02C247C9B74AA97FE1E98A529" : "AyitRestaurantSeller\/",
+    "84DE4E4ED6247A6A4C5D46AB7F4BA01FC29BC806" : "AyitRestaurantBuyer\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "AyitRestaurantBuyer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "AyitRestaurantBuyer.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/magaofei\/AyitRestaurantBuyer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "84DE4E4ED6247A6A4C5D46AB7F4BA01FC29BC806"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/magaofei\/AyitRestaurantSeller.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CF33D120E5A765E02C247C9B74AA97FE1E98A529"
+    }
+  ]
+}

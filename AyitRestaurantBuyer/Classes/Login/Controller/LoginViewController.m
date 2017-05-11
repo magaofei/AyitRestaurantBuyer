@@ -26,19 +26,23 @@
 
 @interface LoginViewController ()
 
-@property (nonatomic, strong) UITextField *accountTextField;
-@property (nonatomic, strong) UITextField *passwordTextField;
-@property (nonatomic, strong) UIButton *loginButton;
-@property (nonatomic, strong) UIImageView *tipImageView;
-@property (nonatomic, strong) UILabel *tipLabel;
+@property (nonatomic, strong) UITextField             *accountTextField;
+@property (nonatomic, strong) UITextField             *passwordTextField;
+@property (nonatomic, strong) UIButton                *loginButton;
+@property (nonatomic, strong) UIImageView             *tipImageView;
+@property (nonatomic, strong) UILabel                 *tipLabel;
 @property (nonatomic, strong) UIActivityIndicatorView *loadingIndicatorView;
-@property (nonatomic, strong) UILabel *accountLabel;
-@property (nonatomic, strong) UILabel *passwordLabel;
-@property (nonatomic, strong) UIImageView *iconLogoView;
-@property (nonatomic, strong) UIView *loginInfoView;
+@property (nonatomic, strong) UILabel                 *accountLabel;
+@property (nonatomic, strong) UILabel                 *passwordLabel;
+@property (nonatomic, strong) UIImageView             *iconLogoView;
+@property (nonatomic, strong) UIView                  *loginInfoView;
 
-@property (nonatomic, copy) NSString *account;
-@property (nonatomic, copy) NSString *password;
+@property (nonatomic, strong) UIBarButtonItem         *popButton;
+
+@property (nonatomic, copy)   NSString                *account;
+@property (nonatomic, copy)   NSString                *password;
+
+@property (nonatomic, strong) UILabel                 *ayitLabel;
 
 
 /**
@@ -111,6 +115,12 @@
     [self.view addSubview:_loginInfoView];
     
     
+    
+    // logo文字
+    _ayitLabel = [[UILabel alloc] init];
+    _ayitLabel.text = @"安阳工学院食堂网络点餐客户版";
+    [self.view addSubview:_ayitLabel];
+    
     // 帐号Label
     _accountLabel = [[UILabel alloc] init];
     _accountLabel.text = @"帐号:";
@@ -150,8 +160,8 @@
     
     // Logo
     _iconLogoView = [[UIImageView alloc] init];
-#pragma mark - TODO: logo
-    _iconLogoView.image = nil;
+
+    _iconLogoView.image = [UIImage imageNamed:@"ayit-logo"];
     [self.view addSubview:_iconLogoView];
     
     _loadingIndicatorView = [[UIActivityIndicatorView alloc] init];
@@ -177,10 +187,27 @@
     [self.view addSubview:_forgetPasswordBtn];
     
     
+    // 左上角关闭按钮
+//    _popButton = [UIBarButtonItem buttonWithType:UIButtonTypeSystem];
+//    [_popButton setTitle:@"关闭" forState:UIControlStateNormal];
+//    [_popButton addTarget:self action:@selector(clickPopButton) forControlEvents:UIControlEventTouchUpInside];
+    _popButton = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(clickPopButton)];
+    
+    
+    self.navigationItem.leftBarButtonItem = _popButton;
+    
+    
     
     [self layoutWidget];
 }
 
+
+/**
+ 返回上个控制器
+ */
+- (void)clickPopButton {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 /**
  点击注册按钮，跳转注册控制器

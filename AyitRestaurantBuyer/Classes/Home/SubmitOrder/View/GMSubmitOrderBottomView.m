@@ -27,8 +27,15 @@
 }
 */
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        [self initSubviews];
+    }
+    return self;
+}
+
+- (void)initSubviews {
+    
     
     _submitButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_submitButton setTitle:@"提交订单" forState:UIControlStateNormal];

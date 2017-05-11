@@ -56,11 +56,13 @@
     [_iconView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.equalTo(self).offset(10);
         make.bottom.equalTo(self).offset(-10);
-        make.width.equalTo(@80);
+        make.width.equalTo(@50);
+//        make.height.equalTo(@50);
     }];
     
     [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        
+        make.left.equalTo(_iconView.mas_right).offset(20);
+        make.centerY.equalTo(_iconView.mas_centerY);
     }];
 }
 

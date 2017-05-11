@@ -81,7 +81,7 @@ static NSString *myHeadCell = @"myHeadCell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return 100;
+        return 60;
     } else {
         return 50;
     }
@@ -104,7 +104,16 @@ static NSString *myHeadCell = @"myHeadCell";
             
         }
         
-        cell.nameLabel.text = @"李俊龙";
+        // 判断有没有登录
+        if ([[NSUserDefaults standardUserDefaults] valueForKey:@"id"]) {
+            cell.nameLabel.text = @"李俊龙";
+        } else {
+            cell.nameLabel.text = @"登录/注册";
+        }
+        
+        cell.iconView.image = [UIImage imageNamed:@"my"];
+        
+        
         return cell;
     } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName];

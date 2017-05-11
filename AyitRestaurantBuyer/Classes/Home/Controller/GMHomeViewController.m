@@ -187,9 +187,9 @@ static NSUInteger carouselViewHeight = 200;
 -(void)testCellData:(GMGoodsTableViewCell *)cell {
     cell.nameLabel.text = @"小马家常菜";
     
-    [cell.goodsIcon sd_setImageWithURL:[NSURL URLWithString:@"http://img.spriteapp.cn/ugc/2016/03/10/092924_69853.jpg"]];
+    [cell.goodsIcon sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494344237836&di=f2966248e181c6bed676407e54a894f3&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201504%2F08%2F20150408H0107_JPEiG.jpeg"]];
     cell.phoneLabel.text = @"手机号:19603822432";
-    cell.goodsTitleLabel.text = @"红烧带鱼+米饭+豆角茄子";
+    cell.goodsTitleLabel.text = @"红烧带鱼";
     cell.orderTimeLabel.text = @"2017.04.12 12:30:02";
     cell.goodsPriceLabel.text = @"$216.50";
 //    cell.orderStatusLabel.text = @"状态:已接受";

@@ -139,6 +139,9 @@
         // 发送成功
         if ([d[@"success"] boolValue] == 1) {
             _registerButton.enabled = YES;
+            [SVProgressHUD showSuccessWithStatus:@"验证码发送成功"];
+        } else {
+            [SVProgressHUD showErrorWithStatus:@"发送失败"];
         }
         
         
@@ -167,7 +170,8 @@
             
             
         } else {
-            [SVProgressHUD showErrorWithStatus:@"注册失败"];
+            [SVProgressHUD showErrorWithStatus:@"已经注册, 请直接登录"];
+            [self.navigationController popViewControllerAnimated:YES];
         }
         NSLog(@"%@", responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

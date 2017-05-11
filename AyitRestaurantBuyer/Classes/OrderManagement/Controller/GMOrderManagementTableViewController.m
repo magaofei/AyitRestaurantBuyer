@@ -7,93 +7,180 @@
 //
 
 #import "GMOrderManagementTableViewController.h"
+#import "OrderTableViewCell.h"
+#import "OrderItem.h"
 
-@interface GMOrderManagementTableViewController ()
+#import <Masonry/Masonry.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "OrderDetailViewController.h"
+
+
+@interface GMOrderManagementTableViewController () <UISearchBarDelegate,UISearchResultsUpdating>
+
+//@property (nonatomic, strong) UIView *headerView;
+
+@property (nonatomic, strong) UISearchController *orderSearchController;
+
+//@property (nonatomic, strong) UITableView *infoTableView;
 
 @end
 
 @implementation GMOrderManagementTableViewController
 
+static NSString *cellName = @"orderManagementCell";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"订单";
+    // Do any additional setup after loading the view.
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.title = @"订单管理";
+    
+    [self initSubviews];
 }
 
+
+
+/**
+ 初始化子视图
+ */
+- (void)initSubviews {
+    self.tableView.rowHeight = 130;
+    //    _headerView = [[UIView alloc] init];
+    //    [self.view addSubview:_headerView];
+    //    _headerView.backgroundColor = [UIColor purpleColor];
+    
+    // tableView
+    //    _infoTableView = [[UITableView alloc] init];
+    //    [self.view addSubview:_infoTableView];
+    //    _infoTableView.backgroundColor = [UIColor whi];
+    
+    
+    
+    //    _orderSearchBar = [[UISearchBar alloc] init];
+    //    _orderSearchBar.barStyle = UIBarStyleBlack;
+    //    self.navigationItem.titleView = _orderSearchBar;
+    //    [self.view addSubview:_orderSearchBar];
+    
+    self.orderSearchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.orderSearchController.searchBar.delegate = self;
+    self.orderSearchController.searchResultsUpdater = self;
+    self.tableView.tableHeaderView = self.orderSearchController.searchBar;
+    
+    
+    
+    
+    [self layoutSubviews];
+    
+}
+
+
+#pragma mark - TODO: 修改tableView的Y值
+- (void)layoutSubviews {
+    
+    
+    //    [_headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.top.equalTo(self.view.mas_top).offset(40);
+    //        make.height.equalTo(@50);
+    //        make.left.right.equalTo(self.view);
+    //    }];
+    
+    //    [_orderSearchBar mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.top.equalTo(self.view.mas_top);
+    //        make.bottom.equalTo(_infoTableView.mas_top);
+    //        make.left.right.equalTo(self.view);
+    //    }];
+    //
+    //    [_infoTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+    ////        make.top.equalTo(_headerView.mas_bottom).offset(20);
+    ////        make.top.equalTo(self.view.mas_top);
+    //        make.left.right.equalTo(self.view);
+    //        make.bottom.equalTo(self.view.mas_bottom);
+    //    }];
+    
+    
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
 
+#pragma mark - dataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 10;
 }
 
-/*
+
+#pragma mark - delegate
+
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    OrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName];
+    if (!cell) {
+        cell = [[OrderTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
+        
+    }
+    
+    [self testCellData:cell];
+    
+    // cell setup
+    
     
     return cell;
 }
-*/
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    
+}
+
+
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    // 取消键盘
+    //    [_orderSearchBar endEditing:YES];
+    //    NSLog(@"%s", __func__);
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 取消选择
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    OrderDetailViewController *orderDetailVC = [[OrderDetailViewController alloc] init];
+    orderDetailVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:orderDetailVC animated:YES];
+    
+}
+
+-(void)testCellData:(OrderTableViewCell *)cell {
+    cell.nameLabel.text = @"联系人:李俊龙";
+    
+    [cell.goodsIcon sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494480859592&di=0aa9752d65bb0d0a21922333a5615ac5&imgtype=0&src=http%3A%2F%2Fpic.syd.com.cn%2F0%2F101%2F21%2F05%2F101210514_000000003dc9cb4c.jpg"]];
+    cell.phoneLabel.text = @"手机号:19603822432";
+    cell.goodsTitleLabel.text = @"红烧带鱼+米饭+豆角茄子";
+    cell.orderTimeLabel.text = @"2017.04.12 12:30:02";
+    cell.goodsPriceLabel.text = @"$216.50";
+    cell.orderStatusLabel.text = @"状态:已接受";
+    
+}
+
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

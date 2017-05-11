@@ -30,11 +30,11 @@
 // 子控制器
 - (void)initAllTabBarController {
     // 首页
-    GMHomeViewController *homeVC = [[GMHomeViewController alloc] init];
-    GMNavigationViewController *homeNav = [[GMNavigationViewController alloc]
-                                           initWithRootViewController:homeVC];
-    homeNav.tabBarItem.title = @"首页";
-    homeNav.tabBarItem.image = [UIImage imageNamed:@"home"];
+//    GMHomeViewController *homeVC = [[GMHomeViewController alloc] init];
+//    GMNavigationViewController *homeNav = [[GMNavigationViewController alloc]
+//                                           initWithRootViewController:homeVC];
+//    homeNav.tabBarItem.title = @"首页";
+//    homeNav.tabBarItem.image = [UIImage imageNamed:@"home"];
     // 附近
     GMNearbyViewController *nearbyVC = [[GMNearbyViewController alloc] init];
     GMNavigationViewController *nearbyNav = [[GMNavigationViewController alloc]
@@ -57,7 +57,7 @@
     myNav.tabBarItem.title = @"我的";
     myNav.tabBarItem.image = [UIImage imageNamed:@"my"];
     
-    [self addChildViewController:homeNav];
+//    [self addChildViewController:homeNav];
     [self addChildViewController:nearbyNav];
     [self addChildViewController:orderManagementNav];
     [self addChildViewController:myNav];
