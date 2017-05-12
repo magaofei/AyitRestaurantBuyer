@@ -24,6 +24,8 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 
+@property (nonatomic, strong) UIBarButtonItem *locationButton;
+
 @end
 
 static NSString *cellName = @"nearbyCell";
@@ -35,6 +37,7 @@ static NSUInteger carouselViewHeight = 200;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"附近商家";
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     
@@ -63,6 +66,9 @@ static NSUInteger carouselViewHeight = 200;
     _tableView.delegate = self;
     _tableView.rowHeight = 100;
     [self.view addSubview: _tableView];
+    
+    _locationButton = [[UIBarButtonItem alloc] initWithTitle:@"十里铺" style:UIBarButtonItemStylePlain target:self action:nil];
+    self.navigationItem.leftBarButtonItem = _locationButton;
 }
 
 

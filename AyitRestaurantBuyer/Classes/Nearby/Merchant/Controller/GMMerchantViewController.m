@@ -32,6 +32,7 @@
 @property (nonatomic, assign) NSUInteger totalPrice;
 
 
+
 /**
  减
  */
@@ -100,11 +101,10 @@
 //    _totalPrice = _bottomView.totalPrice;
     
     [self.view addSubview:_bottomView];
+//    _tableView.tableFooterView = _bottomView;
+    
     [_settlementButton addTarget:self action:@selector(clickSettlementButton) forControlEvents:UIControlEventTouchUpInside];
-//    _bottomView.backgroundColor = [UIColor greenColor];
-    CGFloat width = CGRectGetWidth(self.view.frame);
-    CGFloat height = CGRectGetHeight(self.view.frame) - 45;
-    _bottomView.frame = CGRectMake(0, height, width, 45);
+
     
     
 
@@ -119,11 +119,13 @@
     /**
      底部的View 结算和价格
      */
-//    [_bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.bottom.right.equalTo(self.view.mas_bottom);
-//        make.left.right.equalTo(self.view);
-//        
-//    }];
+    [_bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left);
+        make.right.equalTo(self.view.mas_right);
+        make.bottom.equalTo(self.view.mas_bottom);
+        make.height.equalTo(@45);
+        
+    }];
     
 }
 

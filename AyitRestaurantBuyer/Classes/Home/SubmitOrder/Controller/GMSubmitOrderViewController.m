@@ -49,6 +49,8 @@
     // 提示提交成功
     [SVProgressHUD showSuccessWithStatus:@"提交成功"];
     
+#pragma mark - 在线支付页面
+    
     // 跳转到订单页面
     
     GMTabBarViewController *tabBar = [[GMTabBarViewController alloc] init];
@@ -56,6 +58,8 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [UIApplication sharedApplication].keyWindow.rootViewController = tabBar;
     });
+    
+    
     
 }
 
