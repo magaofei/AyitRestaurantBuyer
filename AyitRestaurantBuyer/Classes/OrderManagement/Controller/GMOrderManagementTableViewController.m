@@ -45,30 +45,12 @@ static NSString *cellName = @"orderManagementCell";
  初始化子视图
  */
 - (void)initSubviews {
-    self.tableView.rowHeight = 130;
-    //    _headerView = [[UIView alloc] init];
-    //    [self.view addSubview:_headerView];
-    //    _headerView.backgroundColor = [UIColor purpleColor];
-    
-    // tableView
-    //    _infoTableView = [[UITableView alloc] init];
-    //    [self.view addSubview:_infoTableView];
-    //    _infoTableView.backgroundColor = [UIColor whi];
-    
-    
-    
-    //    _orderSearchBar = [[UISearchBar alloc] init];
-    //    _orderSearchBar.barStyle = UIBarStyleBlack;
-    //    self.navigationItem.titleView = _orderSearchBar;
-    //    [self.view addSubview:_orderSearchBar];
+    self.tableView.rowHeight = 100;
     
     self.orderSearchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.orderSearchController.searchBar.delegate = self;
     self.orderSearchController.searchResultsUpdater = self;
     self.tableView.tableHeaderView = self.orderSearchController.searchBar;
-    
-    
-    
     
     [self layoutSubviews];
     
@@ -161,14 +143,14 @@ static NSString *cellName = @"orderManagementCell";
 }
 
 -(void)testCellData:(OrderTableViewCell *)cell {
-    cell.nameLabel.text = @"联系人:李俊龙";
+//    cell.nameLabel.text = @"联系人:李俊龙";
     
     [cell.goodsIcon sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494480859592&di=0aa9752d65bb0d0a21922333a5615ac5&imgtype=0&src=http%3A%2F%2Fpic.syd.com.cn%2F0%2F101%2F21%2F05%2F101210514_000000003dc9cb4c.jpg"]];
-    cell.phoneLabel.text = @"手机号:19603822432";
+//    cell.phoneLabel.text = @"手机号:19603822432";
     cell.goodsTitleLabel.text = @"红烧带鱼+米饭+豆角茄子";
     cell.orderTimeLabel.text = @"2017.04.12 12:30:02";
-    cell.goodsPriceLabel.text = @"$216.50";
-    cell.orderStatusLabel.text = @"状态:已接受";
+    cell.goodsPriceLabel.text = @"¥21";
+    cell.orderStatusLabel.text = @"状态:商家已接收";
     
 }
 

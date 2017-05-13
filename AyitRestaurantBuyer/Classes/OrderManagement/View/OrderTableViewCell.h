@@ -10,9 +10,9 @@
 
 @interface OrderTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) UILabel *nameLabel;
-
-@property (nonatomic, strong) UILabel *phoneLabel;
+//@property (nonatomic, strong) UILabel *nameLabel;
+//
+//@property (nonatomic, strong) UILabel *phoneLabel;
 
 @property (nonatomic, strong) UIImageView *goodsIcon;
 

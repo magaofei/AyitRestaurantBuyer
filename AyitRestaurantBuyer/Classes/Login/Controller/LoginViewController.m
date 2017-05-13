@@ -119,6 +119,7 @@
     // logo文字
     _ayitLabel = [[UILabel alloc] init];
     _ayitLabel.text = @"安阳工学院食堂网络点餐客户版";
+    _ayitLabel.font = [UIFont systemFontOfSize:19];
     [self.view addSubview:_ayitLabel];
     
     // 帐号Label
@@ -231,6 +232,12 @@
 }
 
 - (void)layoutWidget {
+    
+    [_ayitLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.topMargin.equalTo(self.view).offset(44);
+    }];
+    
     // Logo
     [_iconLogoView mas_makeConstraints:^(MASConstraintMaker *make) {
         // 高度宽度
@@ -238,9 +245,11 @@
         // 距离顶部35点
         make.width.height.equalTo(@94);
         make.centerX.equalTo(self.view);
-        make.topMargin.equalTo(self.view).offset(35+44+20);
+        make.topMargin.equalTo(_ayitLabel.mas_bottom).offset(30);
         
     }];
+    
+    
     
     // 帐号密码View
     [_loginInfoView mas_makeConstraints:^(MASConstraintMaker *make) {

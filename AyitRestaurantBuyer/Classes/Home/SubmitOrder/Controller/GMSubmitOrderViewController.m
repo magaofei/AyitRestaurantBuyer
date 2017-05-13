@@ -99,15 +99,17 @@
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
-                cell.textLabel.text = @"漫品风尚休闲馆2人餐";
-                cell.detailTextLabel.text = @"12.5";
+                cell.textLabel.text = @"地三鲜盖饭";
+                cell.detailTextLabel.text = @"12";
                 break;
             case 1:
                 cell.textLabel.text = @"数量";
+                cell.detailTextLabel.text = @"2";
                 
                 break;
             case 2:
                 cell.textLabel.text = @"总计";
+                cell.detailTextLabel.text = @"¥24";
                 break;
             default:
                 break;
@@ -117,11 +119,11 @@
         switch (indexPath.row) {
             case 0:
                 cell.textLabel.text = @"优惠券";
-                
+                cell.detailTextLabel.text = @"¥-3";
                 break;
             case 1:
                 cell.textLabel.text = @"订单总价";
-                cell.detailTextLabel.text = @"$23.9";
+                cell.detailTextLabel.text = @"¥21";
                 break;
             default:
                 break;
@@ -153,6 +155,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
 /*
 #pragma mark - Navigation
 

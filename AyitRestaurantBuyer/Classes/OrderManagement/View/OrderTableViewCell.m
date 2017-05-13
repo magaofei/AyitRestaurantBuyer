@@ -39,14 +39,14 @@
 
 - (void) initSubviews {
     
-    // 联系人姓名
-    _nameLabel = [[UILabel alloc] init];
-    [self addSubview:_nameLabel];
-    
-    // 手机号
-    _phoneLabel = [[UILabel alloc] init];
-    [self addSubview:_phoneLabel];
-    // 缩略图
+//    // 联系人姓名
+//    _nameLabel = [[UILabel alloc] init];
+//    [self addSubview:_nameLabel];
+//    
+//    // 手机号
+//    _phoneLabel = [[UILabel alloc] init];
+//    [self addSubview:_phoneLabel];
+//    // 缩略图
     
     _goodsIcon = [[UIImageView alloc] init];
     _goodsIcon.image = nil;
@@ -76,27 +76,28 @@
 }
 
 - (void)initLayoutSubviews {
-    // 联系人姓名
-    [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mas_top).offset(10);
-        make.left.equalTo(self.mas_left).offset(15);
-    }];
-    
-    // 手机号
-    [_phoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mas_top).offset(10);
-        // 左边比右边小 就用负数
-        make.right.equalTo(self.mas_right).offset(-15);
-    }];
+//    // 联系人姓名
+//    [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.mas_top).offset(10);
+//        make.left.equalTo(self.mas_left).offset(15);
+//    }];
+//    
+//    // 手机号
+//    [_phoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.mas_top).offset(10);
+//        // 左边比右边小 就用负数
+//        make.right.equalTo(self.mas_right).offset(-15);
+//    }];
     
     
     // 缩略图
     
     [_goodsIcon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_nameLabel.mas_bottom).offset(10);
+        make.top.equalTo(self.mas_top).offset(10);
         make.left.equalTo(self.mas_left).offset(15);
+        make.bottom.equalTo(self.mas_bottom).offset(-10);
         make.width.equalTo(@80);
-        make.height.equalTo(@80);
+//        make.height.equalTo(@80);
     }];
     
     // 商品名
