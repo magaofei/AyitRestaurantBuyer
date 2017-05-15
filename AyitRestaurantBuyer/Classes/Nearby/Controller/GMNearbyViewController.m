@@ -30,7 +30,6 @@
 
 static NSString *cellName = @"nearbyCell";
 static NSString *carouselCell = @"carouselCell";
-static NSUInteger carouselViewHeight = 200;
 @implementation GMNearbyViewController
 
 - (void)viewDidLoad {

@@ -56,7 +56,6 @@
     _goodsTitleLabel = [[UILabel alloc] init];
     [self addSubview:_goodsTitleLabel];
     
-    
     // 订单时间
     _orderTimeLabel = [[UILabel alloc] init];
     _orderTimeLabel.font = [UIFont systemFontOfSize:12];

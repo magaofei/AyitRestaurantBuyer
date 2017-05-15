@@ -83,13 +83,7 @@
 - (void)initSubviews {
     // 帐号  密码 框
     // 登录按钮
-    
     [self initWidget];
- 
-    
-    
-    
-    
     _tipLabel.hidden = YES;
     _tipImageView.hidden = YES;
     //默认隐藏
@@ -108,14 +102,8 @@
     [_loginButton setTitle:@"登 录" forState:UIControlStateNormal];
     [self.view addSubview:_loginButton];
     [_loginButton addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    
     _loginInfoView = [[UIView alloc] init];
     [self.view addSubview:_loginInfoView];
-    
-    
-    
     // logo文字
     _ayitLabel = [[UILabel alloc] init];
     _ayitLabel.text = @"安阳工学院食堂网络点餐客户版";
@@ -137,7 +125,9 @@
     _accountTextField = [[UITextField alloc] init];
     _accountTextField.placeholder = @"请输入帐号";
     _accountTextField.borderStyle = UITextBorderStyleRoundedRect;
+    _accountTextField.keyboardType = UIKeyboardTypePhonePad;
     [_loginInfoView addSubview:_accountTextField];
+    
     // 密码输入
     _passwordTextField = [[UITextField alloc] init];
     _passwordTextField.placeholder = @"请输入密码";
@@ -235,7 +225,8 @@
     
     [_ayitLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.topMargin.equalTo(self.view).offset(44);
+        make.topMargin.equalTo(self.mas_topLayoutGuide).offset(44);
+        
     }];
     
     // Logo

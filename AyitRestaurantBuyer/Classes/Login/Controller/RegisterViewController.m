@@ -48,12 +48,14 @@
     _phoneTextField = [[UITextField alloc] init];
     _phoneTextField.placeholder = @"手机号";
     _phoneTextField.borderStyle = UITextBorderStyleRoundedRect;
+    _phoneTextField.keyboardType = UIKeyboardTypePhonePad;
 #pragma makr - todo 校验输入框
     [self.view addSubview:_phoneTextField];
     
     _passwordTextField = [[UITextField alloc] init];
     _passwordTextField.placeholder = @"密码";
     _passwordTextField.borderStyle = UITextBorderStyleRoundedRect;
+    _passwordTextField.secureTextEntry = YES;
     [self.view addSubview:_passwordTextField];
     
     _authCodeButton = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -90,7 +92,7 @@
 - (void)initLayoutSubviews {
     
     [_phoneTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).offset(120);
+        make.top.equalTo(self.mas_topLayoutGuide).offset(80);
         make.left.equalTo(self.view.mas_left).offset(92);
         make.right.equalTo(self.view.mas_right).offset(-92);
     }];

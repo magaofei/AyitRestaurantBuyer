@@ -25,42 +25,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    
     self.navigationItem.title = @"提交订单";
     self.navigationController.navigationBarHidden = NO;
     // 商品价格
-    
     // 商品数量
-    
     GMSubmitOrderBottomView *bottomView = [[GMSubmitOrderBottomView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-    
     _submitButton = bottomView.submitButton;
     [_submitButton addTarget:self action:@selector(clickSubmitButton) forControlEvents:UIControlEventTouchUpInside];
     self.tableView.tableFooterView = bottomView;
-    
-    
-    
 }
 
 - (void)clickSubmitButton {
-    
     // 提示提交成功
     [SVProgressHUD showSuccessWithStatus:@"提交成功"];
     
 #pragma mark - 在线支付页面
-    
     // 跳转到订单页面
-    
     GMTabBarViewController *tabBar = [[GMTabBarViewController alloc] init];
     tabBar.selectedIndex = 1;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [UIApplication sharedApplication].keyWindow.rootViewController = tabBar;
     });
-    
-    
-    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

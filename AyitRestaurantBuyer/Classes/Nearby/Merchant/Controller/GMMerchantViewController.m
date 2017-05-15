@@ -72,11 +72,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    
     [self initSubviews];
-    
     _merchantItem = [[GMCommodityItem alloc] init];
     _merchantItem.commodityName = @"地三鲜";
     _merchantItem.commoditySales = @"月售18份";
@@ -93,27 +89,13 @@
     [self.view addSubview:_tableView];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    
-    
     _bottomView = [[GMMerchantBottomView alloc] init];
     _settlementButton = _bottomView.settlementButton;
     _totalPriceLabel = _bottomView.totalPriceLabel;
-//    _totalPrice = _bottomView.totalPrice;
-    
     [self.view addSubview:_bottomView];
-//    _tableView.tableFooterView = _bottomView;
-    
     [_settlementButton addTarget:self action:@selector(clickSettlementButton) forControlEvents:UIControlEventTouchUpInside];
-
-    
-    
-
-    
     [self initLayoutSubviews];
 }
-
-
-
 - (void)initLayoutSubviews {
     
     /**
@@ -126,10 +108,7 @@
         make.height.equalTo(@45);
         
     }];
-    
 }
-
-
 /**
  结算
  */
