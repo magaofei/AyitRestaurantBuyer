@@ -6,6 +6,9 @@
 //  Copyright © 2017年 Gaofei Ma. All rights reserved.
 //
 
+#pragma mark - 实现传递订单模型功能
+// 从商家页面 选中多款商品, 传递商家和商品模型数组, 到订单页面
+
 #import "GMMerchantViewController.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
@@ -14,6 +17,10 @@
 #import "GMMerchantBottomView.h"
 #import "GMSubmitOrderViewController.h"
 #import "GMCommodityItem.h"
+#import "OrderItem.h"
+#import "GMHTTPNetworking.h"
+#import "GMMerchantItem.h"
+#import <YYModel/YYModel.h>
 
 #import <Masonry/Masonry.h>
 #import <SDWebImage/UIImageView+WebCache.h>
@@ -27,17 +34,16 @@
 /** 数据 */
 @property (nonatomic, strong) NSMutableArray *commodityArray;
 
+@property (nonatomic, strong) NSMutableArray *selectedCommodityArray;
+
 @property (nonatomic, strong) UILabel *totalPriceLabel;
 
 @property (nonatomic, assign) NSUInteger totalPrice;
-
-
 
 /**
  减
  */
 @property (nonatomic, strong) UIButton *reduceButton;
-
 
 /**
  商品数量
@@ -52,12 +58,13 @@
  */
 @property (nonatomic, strong) UIButton *addButton;
 
-
-
 /**
  结算button
  */
 @property (nonatomic, strong) UIButton *settlementButton;
+
+
+
 
 @end
 
@@ -70,17 +77,102 @@
     return _commodityArray;
 }
 
+- (NSMutableArray *)selectedCommodityArray {
+    if (!_selectedCommodityArray) {
+        _selectedCommodityArray = [NSMutableArray array];
+    }
+    return _selectedCommodityArray;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initSubviews];
-    _merchantItem = [[GMCommodityItem alloc] init];
-    _merchantItem.commodityName = @"地三鲜";
-    _merchantItem.commoditySales = @"月售18份";
-    _merchantItem.commodityPrice = @"12";
     
-    _merchantItem.commodityIcon = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494435312216&di=9b089188954a5dc82837a1a7a24dc66b&imgtype=0&src=http%3A%2F%2Fs1.nuomi.bdimg.com%2Fupload%2Fdeal%2F2014%2F6%2FV_L%2F1151192-fngqb4b3s6-3204626805425021.jpg";
-    [self.commodityArray addObject:_merchantItem];
+    [self initWithData];
     
+    
+    
+}
+
+- (void)initWithData {
+    
+    // 拿到商家id POST所有商品
+    GMHTTPNetworking *manager = [GMHTTPNetworking sharedManager];
+    
+    NSDictionary *p = @{
+                        @"merchantId": self.merchantItem.id
+                        };
+    [manager POST:@"/server/merchant/commodity/getByMerchantId" parameters:p progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        if (!responseObject) {
+            [SVProgressHUD showErrorWithStatus:@"网络错误"];
+            return ;
+        }
+        if ([responseObject[@"success"] boolValue] != YES) {
+            [SVProgressHUD showErrorWithStatus:@"返回错误"];
+            return;
+        }
+        
+        // 遍历所有数据
+        NSArray *data = responseObject[@"data"];
+        GMCommodityItem *item = [[GMCommodityItem alloc] init];
+        for (NSDictionary *d in data) {
+            item = [GMCommodityItem yy_modelWithJSON:d];
+            [self.commodityArray addObject:item];
+        }
+        
+//        NSIndexSet *headSection = [[NSIndexSet alloc] initWithIndex:0];
+//        [self.tableView reloadSections:headSection withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        [self.tableView reloadData];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
+    // 获取商家信息
+    NSDictionary *merchantP = @{
+                                @"id": self.merchantItem.id
+                                };
+    [manager POST:@"/server/merchant/merchant/findById" parameters:merchantP progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (!responseObject) {
+            [SVProgressHUD showErrorWithStatus:@"网络错误"];
+            return ;
+        }
+        if ([responseObject[@"success"] boolValue] != YES) {
+            [SVProgressHUD showErrorWithStatus:@"返回错误"];
+            return;
+        }
+        NSDictionary *data = responseObject[@"data"];
+        GMMerchantItem *item = [GMMerchantItem yy_modelWithJSON:data];
+        self.merchantItem = item;
+        
+        [self.tableView reloadData];
+//        NSIndexSet *headSection = [[NSIndexSet alloc] initWithIndex:1];
+//        [self.tableView reloadSections:headSection withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
+    
+//    // data
+//    GMCommodityItem *commodityItem = [[GMCommodityItem alloc] init];
+//    commodityItem.commodityName = @"地三鲜";
+//    commodityItem.commoditySales = @"月售18份";
+//    commodityItem.commodityPrice = @"12";
+//    
+//    commodityItem.commodityIcon = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495025816791&di=7a78bb12d3eb3efbe94759b11edba3bf&imgtype=0&src=http%3A%2F%2Fi3.dpfile.com%2F2010-11-27%2F5954190_b.jpg";
+//    
+//    GMCommodityItem *commodityItem2 = [[GMCommodityItem alloc] init];
+//    commodityItem2.commodityName = @"红烧茄子";
+//    commodityItem2.commoditySales = @"月售13份";
+//    commodityItem2.commodityPrice = @"12";
+//    
+//    commodityItem2.commodityIcon = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495097436963&di=7b85be0dd5b6e320349abb92d9a93169&imgtype=0&src=http%3A%2F%2Fp3.qhimg.com%2Ft01bf1fa855d3d2d7ad.png";
+//    
+//    [self.commodityArray addObject:commodityItem];
+//    [self.commodityArray addObject:commodityItem2];
 }
 
 - (void)initSubviews {
@@ -94,6 +186,11 @@
     _totalPriceLabel = _bottomView.totalPriceLabel;
     [self.view addSubview:_bottomView];
     [_settlementButton addTarget:self action:@selector(clickSettlementButton) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+
+    
+    
     [self initLayoutSubviews];
 }
 - (void)initLayoutSubviews {
@@ -108,13 +205,34 @@
         make.height.equalTo(@45);
         
     }];
+    
+  
 }
 /**
- 结算
+ 去支付
  */
 - (void)clickSettlementButton {
+    
+    [self.selectedCommodityArray removeAllObjects];
+    // 当前选择的商品
+    for (GMCommodityItem *item in _commodityArray) {
+        if (item.commodityQuantity > 0) {
+            [self.selectedCommodityArray addObject:item];
+        }
+    }
+   
     // 跳转到确认订单
     GMSubmitOrderViewController *submitOrderVC = [[GMSubmitOrderViewController alloc] init];
+    
+    // 传递模型
+    OrderItem *merchantOrderItem = [[OrderItem alloc] init];
+    merchantOrderItem.orderTotalPrice = _totalPrice;
+    merchantOrderItem.commodityItems = self.selectedCommodityArray;
+    merchantOrderItem.merchantItem = self.merchantItem;
+    
+    submitOrderVC.submitOrderItem = merchantOrderItem;
+    
+    
     [self.navigationController pushViewController:submitOrderVC animated:YES];
     
 }
@@ -125,7 +243,7 @@
     if (indexPath.section == 0) {
         return 120;
     } else {
-        return 110;
+        return 90;
     }
     
 }
@@ -143,8 +261,14 @@
         }
         
         
+        
+        
         [headerCell.iconImageView sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494435312216&di=9b089188954a5dc82837a1a7a24dc66b&imgtype=0&src=http%3A%2F%2Fs1.nuomi.bdimg.com%2Fupload%2Fdeal%2F2014%2F6%2FV_L%2F1151192-fngqb4b3s6-3204626805425021.jpg"]];
         
+        headerCell.merchantNameLabel.text = self.merchantItem.merchantName;
+        
+        headerCell.merchantAfficheLabel.text = @"公告:欢迎光临, 用餐高峰时期请提前下单, 谢谢";
+        headerCell.couponInfoLabel.text = @"新用户下单立减¥7.0元";
         
         
         return headerCell;
@@ -163,22 +287,18 @@
         
         goodsCell.delegate = self;
         
+        if (self.commodityArray.count <= 0) {
+            return goodsCell;
+        }
+        
+        GMCommodityItem *item = self.commodityArray[indexPath.row];
         goodsCell.commodityItem = self.commodityArray[indexPath.row];
+        [goodsCell.commodityIconImageView sd_setImageWithURL:[NSURL URLWithString:item.showImg.firstObject] placeholderImage:[UIImage imageNamed:@"maocai"]];
         
-        
-        
-        // KVO
-//        _commodityQuantityLabel = goodsCell.commodityQuantityLabel;
-        
-        
-//        [_commodityQuantitySting addObserver:self forKeyPath:@"integerValue" options:NSKeyValueObservingOptionNew context:nil];
-        
-//        _addButton = goodsCell.addButton;
-//        [_addButton addTarget:self action:@selector(clickAddButton:)forControlEvents:UIControlEventTouchUpInside];
-//        
-//        _reduceButton = goodsCell.reduceButton;
-//        [_reduceButton addTarget:self action:@selector(clickReduceButton:) forControlEvents:UIControlEventTouchUpInside];
-//        
+        goodsCell.commodityTitleLabel.text = item.commodityName;
+        goodsCell.commoditySalesLabel.text = [NSString stringWithFormat:@"月售%ld份", (long)item.countOfSelled];
+        goodsCell.commodityPriceLabel.text = [NSString stringWithFormat:@"¥%ld", (long)item.price];
+        goodsCell.commodityDetailTitleLabel.text = @"";
         
         
         return goodsCell;
@@ -189,6 +309,14 @@
 }
 
 #pragma mark - tableView
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 20;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
@@ -228,98 +356,35 @@
 #pragma mark - delegate
 - (void)commodityCellDidClickAddButton:(GMMerchantGoodsCell *)cell {
     // 计算总价
-    _totalPrice = cell.commodityItem.commodityPrice.integerValue + self.totalPrice;
+    
+    // $12 转换为 12
+    _totalPrice = cell.commodityItem.price + self.totalPrice;
     
     self.totalPriceLabel.text = [NSString stringWithFormat:@"总价:¥%zd",_totalPrice];
+    
+    // 添加当前商品
+//    cell.commodityItem.commodityQuantity ++;
+    
+   
+    
+    
+    
     
 }
 
 - (void)commodityCellDidClickReduceButton:(GMMerchantGoodsCell *)cell {
     // 计算总价
-    _totalPrice = self.totalPrice - cell.commodityItem.commodityPrice.integerValue;
+    _totalPrice = self.totalPrice - cell.commodityItem.price;
     
     self.totalPriceLabel.text = [NSString stringWithFormat:@"总价:¥%zd",_totalPrice];
+    
+//    cell.commodityItem.commodityQuantity --;
+    
     
 }
 
 
-//- (void)setCommodityItem:(GMCommodityItem *)commodityItem merchantGoodsCell:(GMMerchantGoodsCell *)cell {
-//    cell.commodityItem = commodityItem;
-//    [cell.commodityIconImageView sd_setImageWithURL:[NSURL URLWithString:commodityItem.commodityIcon]];
-//    
-//    cell.commodityTitleLabel.text = commodityItem.commodityName;
-//    
-//    cell.commoditySalesLabel.text = commodityItem.commoditySales;
-//    cell.commodityPriceLabel.text = commodityItem.commodityPrice;
-//    
-//    // 根据count决定countLabel显示的文字
-//    self.commodityQuantityLabel.text = [NSString stringWithFormat:@"%zd",commodityItem.commodityQuantity];
-//    // 根据count决定减号按钮是否能点击
-//    self.reduceButton.enabled = (commodityItem.commodityQuantity > 0);
-//}
 
-/**
- *  加号点击
- */
-//- (void)clickAddButton:(GMMerchantGoodsCell *)cell {
-//    // 这里传过来的其实是button
-//    // 1.修改模型
-//    cell.commodityItem.commodityQuantity ++ ;
-//    // 2.修改界面
-//    cell.commodityQuantityLabel.text = [NSString stringWithFormat:@"%zd",cell.commodityItem.commodityQuantity];
-//    // 3.减号按钮能点击
-//    cell.reduceButton.enabled = YES;
-//    // 4.发布通知  自己就是通知的发布者，可以把自己传递过去
-//    //    [[NSNotificationCenter defaultCenter] postNotificationName:@"plusClickNotification" object:self];
-//    
-//    //判断代理是否实现了这个方法，再进行调用，当此方法是optopnal时必须判断
-//    if ([self respondsToSelector:@selector(commodityCellDidClickAddButton:)]) {
-//        [self commodityCellDidClickAddButton:cell];//通知代理调用方法
-//    }
-//}
-//
-///**
-// *  减号点击
-// */
-//- (void)clickReduceButton:(GMMerchantGoodsCell *)cell {
-//    // 1.修改模型
-//    cell.commodityItem.commodityQuantity -- ;
-//    // 2.修改界面
-//    cell.commodityQuantityLabel.text = [NSString stringWithFormat:@"%zd",cell.commodityItem.commodityQuantity];
-//    
-//    if (cell.commodityItem.commodityQuantity == 0) {
-//        self.reduceButton.enabled = NO;
-//    }
-//    
-//    // 3.发布通知
-//    //    [[NSNotificationCenter defaultCenter] postNotificationName:@"minusClickNotification" object:self];
-//    [self commodityCellDidClickReduceButton:cell];
-//}
-
-
-
-/**
- 点击添加按钮
- */
-//- (void)clickAddButton {
-//    
-////    _commodityQuantitySting = [NSString stringWithFormat:@"%ld", _commodityQuantitySting.integerValue+1];
-//}
-//
-//- (void)clickReduceButton {
-//    NSLog(@"%s", __func__);
-//}
-
-//- (void)dealloc {
-//    [self removeObserver:self forKeyPath:@"integerValue"];
-//}
-
-//- (void)viewWillDisappear:(BOOL)animated {
-//    [super viewWillDisappear:animated];
-//    
-//    self.hidesBottomBarWhenPushed = NO;
-//}
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -327,6 +392,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

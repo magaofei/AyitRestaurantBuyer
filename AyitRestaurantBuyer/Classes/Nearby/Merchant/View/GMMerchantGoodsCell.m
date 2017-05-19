@@ -61,11 +61,14 @@
 
 - (void)initSubviews {
     
+    [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+
+    
     _commodityIconImageView = [[UIImageView alloc] init];
     [self addSubview:_commodityIconImageView];
     
     _commodityTitleLabel = [[UILabel alloc] init];
-    _commodityTitleLabel.font = [UIFont systemFontOfSize:19];
+    _commodityTitleLabel.font = [UIFont systemFontOfSize:17];
     [self addSubview:_commodityTitleLabel];
     
     _commodityDetailTitleLabel = [[UILabel alloc] init];
@@ -116,7 +119,7 @@
         make.top.equalTo(self).offset(10);
         make.left.equalTo(self).offset(15);
         make.bottom.equalTo(self.mas_bottom).offset(-10);
-        make.width.equalTo(@90);
+        make.width.equalTo(@70);
     }];
     
     [_commodityTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -124,13 +127,14 @@
         make.left.equalTo(_commodityIconImageView.mas_right).offset(15);
     }];
     
-    [_commodityDetailTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_commodityTitleLabel.mas_bottom).offset(10);
-        make.left.equalTo(_commodityIconImageView.mas_right).offset(15);
-    }];
+//    [_commodityDetailTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(_commodityTitleLabel.mas_bottom).offset(10);
+//        make.left.equalTo(_commodityIconImageView.mas_right).offset(15);
+//    }];
     
     [_commoditySalesLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_commodityDetailTitleLabel.mas_bottom).offset(10);
+//        make.top.equalTo(_commodityDetailTitleLabel.mas_bottom).offset(10);
+        make.centerY.equalTo(self.mas_centerY);
         make.left.equalTo(_commodityIconImageView.mas_right).offset(15);
     }];
     
@@ -155,27 +159,27 @@
     }];
 }
 
-- (void)setCommodityItem:(GMCommodityItem *)commodityItem {
-    _commodityItem = commodityItem;
-    [self.commodityIconImageView sd_setImageWithURL:[NSURL URLWithString:commodityItem.commodityIcon]];
-    
-    self.commodityTitleLabel.text = commodityItem.commodityName;
-    
-    self.commoditySalesLabel.text = commodityItem.commoditySales;
-    self.commodityPriceLabel.text = commodityItem.commodityPrice;
-    
-    // 根据count决定countLabel显示的文字
-    self.commodityQuantityLabel.text = [NSString stringWithFormat:@"%zd",commodityItem.commodityQuantity];
-    // 根据count决定减号按钮是否能点击
-//    self.reduceButton.enabled = (commodityItem.commodityQuantity > 0);
-}
+//- (void)setCommodityItem:(GMCommodityItem *)commodityItem {
+//    _commodityItem = commodityItem;
+//    [self.commodityIconImageView sd_setImageWithURL:[NSURL URLWithString:commodityItem.showImg]];
+//    
+//    self.commodityTitleLabel.text = commodityItem.commodityName;
+//    
+//    self.commoditySalesLabel.text = commodityItem.commoditySales;
+//    self.commodityPriceLabel.text = [NSString stringWithFormat:@"¥%@", commodityItem.commodityPrice];
+//    
+//    // 根据count决定countLabel显示的文字
+//    self.commodityQuantityLabel.text = [NSString stringWithFormat:@"%zd",commodityItem.commodityQuantity];
+//    // 根据count决定减号按钮是否能点击
+////    self.reduceButton.enabled = (commodityItem.commodityQuantity > 0);
+//}
 //
 ///**
 // *  加号点击
 // */
 - (void)clickAddButton {
     // 1.修改模型
-    self.commodityItem.commodityQuantity ++ ;
+    self.commodityItem.commodityQuantity++;
     // 2.修改界面
     self.commodityQuantityLabel.text = [NSString stringWithFormat:@"%zd",self.commodityItem.commodityQuantity];
     // 3.减号按钮显示

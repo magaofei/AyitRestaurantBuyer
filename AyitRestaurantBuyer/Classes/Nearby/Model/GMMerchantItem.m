@@ -1,5 +1,5 @@
 //
-//  GMMerchantItem.m
+//  GMMerchantData.m
 //  AyitRestaurantBuyer
 //
 //  Created by MAMIAN on 2017/4/22.
@@ -7,8 +7,9 @@
 //
 
 #import "GMMerchantItem.h"
-#import <YYModel/YYModel.h>
 
 @implementation GMMerchantItem
+
+
 
 @end

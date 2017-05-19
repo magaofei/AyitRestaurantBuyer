@@ -23,6 +23,8 @@
 #import "ForgetPasswordViewController.h"
 #import "GMHTTPNetworking.h"
 #import <Masonry/Masonry.h>
+#import <YYModel/YYModel.h>
+#import "GMClientItem.h"
 
 @interface LoginViewController ()
 
@@ -81,6 +83,7 @@
  子界面
  */
 - (void)initSubviews {
+    
     // 帐号  密码 框
     // 登录按钮
     [self initWidget];
@@ -260,10 +263,10 @@
     // 帐号TextField
     
     [_accountTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_loginInfoView.mas_top);
+//        make.centerY
         make.right.equalTo(_loginInfoView.mas_right).offset(-10);
         make.left.equalTo(_accountLabel.mas_right).offset(20);
-//        make.centerY.equalTo(_accountLabel.mas_centerY);
+        make.centerY.equalTo(_accountLabel.mas_centerY);
         
     }];
     
@@ -277,10 +280,10 @@
     }];
     
     [_passwordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(_loginInfoView.mas_bottom);
+//        make.bottom.equalTo(_loginInfoView.mas_bottom);
         make.right.equalTo(_loginInfoView.mas_right).offset(-10);
         make.left.equalTo(_passwordLabel.mas_right).offset(20);
-//        make.centerY.equalTo(_passwordLabel.mas_centerY);
+        make.centerY.equalTo(_passwordLabel.mas_centerY);
     }];
     
    
@@ -357,7 +360,14 @@
             return ;
         }
         if ([responseObject[@"success"] boolValue] == 1) {
-            [[NSUserDefaults standardUserDefaults] setValue:@"id" forKey:@"id"];
+            
+            NSDictionary *d = responseObject[@"data"];
+            GMClientItem *clientItem = [GMClientItem yy_modelWithJSON:d];
+            
+            [[NSUserDefaults standardUserDefaults] setValue:clientItem.id forKey:@"id"];
+            [[NSUserDefaults standardUserDefaults] setValue:clientItem.phone forKey:@"phone"];
+
+//            [[NSUserDefaults standardUserDefaults] setObject:[responseObject yy_modelToJSONObject] forKey:@"clientItem"];
             result = YES;
             
             //验证成功
@@ -469,6 +479,8 @@
 - (void)setPassword:(NSString *)password {
     _password = _passwordTextField.text;
 }
+
+
 /*
 #pragma mark - Navigation
 

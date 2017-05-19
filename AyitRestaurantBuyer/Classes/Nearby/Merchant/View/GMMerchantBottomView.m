@@ -58,7 +58,8 @@
     [self addSubview:_totalPriceLabel];
     
     _settlementButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [_settlementButton setTitle:@"去结算" forState:UIControlStateNormal];
+    [_settlementButton setTitle:@"去支付" forState:UIControlStateNormal];
+    _settlementButton.titleLabel.font = [UIFont systemFontOfSize:15];
     [_settlementButton setBackgroundColor:[UIColor colorWithRed: 255.0/255.0 green: 120.0/255.0 blue: 102.0/255.0 alpha: 1.0]];
     _settlementButton.titleLabel.font = [UIFont systemFontOfSize:15];
     [_settlementButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

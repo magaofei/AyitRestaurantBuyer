@@ -24,6 +24,8 @@
 @property (nonatomic, strong) UIButton *authCodeButton;
 @property (nonatomic, strong) UITextField *authCodeTextField;
 
+@property (nonatomic, strong) UITextField *secondPasswordTextField;
+
 @property (nonatomic, strong) UIButton *registerButton;
 
 @property (nonatomic, assign) BOOL *registerResult;
@@ -46,43 +48,54 @@
 - (void)initSubviews {
     
     _phoneTextField = [[UITextField alloc] init];
-    _phoneTextField.placeholder = @"手机号";
+    _phoneTextField.placeholder = @"请输入手机号";
     _phoneTextField.borderStyle = UITextBorderStyleRoundedRect;
     _phoneTextField.keyboardType = UIKeyboardTypePhonePad;
 #pragma makr - todo 校验输入框
     [self.view addSubview:_phoneTextField];
     
-    _passwordTextField = [[UITextField alloc] init];
-    _passwordTextField.placeholder = @"密码";
-    _passwordTextField.borderStyle = UITextBorderStyleRoundedRect;
-    _passwordTextField.secureTextEntry = YES;
-    [self.view addSubview:_passwordTextField];
+    
     
     _authCodeButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    _authCodeButton.backgroundColor = [UIColor orangeColor];
-    _authCodeButton.titleLabel.tintColor = [UIColor blackColor];
-//    _authCodeButton.titleLabel.backgroundColor = [UIColor orangeColor];
+    _authCodeButton.titleLabel.font = [UIFont systemFontOfSize:15];
+    [_authCodeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_authCodeButton setBackgroundColor:[UIColor colorWithRed: 255.0/255.0 green: 120.0/255.0 blue: 102.0/255.0 alpha: 1.0]];
+    
     [_authCodeButton setTitle:@"发送验证码" forState:UIControlStateNormal];
     
 #pragma mark - 限制发送间隔
     [_authCodeButton addTarget:self action:@selector(sendAuthCode) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_authCodeButton];
-
+    
     
     _authCodeTextField = [[UITextField alloc] init];
     _authCodeTextField.placeholder = @"验证码";
     _authCodeTextField.borderStyle = UITextBorderStyleRoundedRect;
+    
     [self.view addSubview:_authCodeTextField];
     
+    _passwordTextField = [[UITextField alloc] init];
+    _passwordTextField.placeholder = @"请输入密码";
+    _passwordTextField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:_passwordTextField];
+    
+    _secondPasswordTextField = [[UITextField alloc] init];
+    _secondPasswordTextField.placeholder = @"请再输入一次密码";
+    _secondPasswordTextField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:_secondPasswordTextField];
+    
     _registerButton = [UIButton buttonWithType:UIButtonTypeSystem];
-//    _registerButton.backgroundColor = [UIColor orangeColor];
-    _registerButton.titleLabel.tintColor = [UIColor blackColor];
-    _registerButton.titleLabel.backgroundColor = [UIColor orangeColor];
+    _registerButton.backgroundColor = [UIColor colorWithRed: 255.0/255.0 green: 120.0/255.0 blue: 102.0/255.0 alpha: 1.0];
+    [_registerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    //    [_registerButton setBackgroundColor:[UIColor colorWithRed: 255.0/255.0 green: 171.0/255.0 blue: 10.0/255.0 alpha: 1.0]];
+    
     [_registerButton setTitle:@"注 册" forState:UIControlStateNormal];
+    
+    
     _registerButton.titleLabel.font = [UIFont systemFontOfSize:18];
     _registerButton.enabled = NO;
     
-
+    
     [_registerButton addTarget:self action:@selector(registerUser) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_registerButton];
     
@@ -92,33 +105,42 @@
 - (void)initLayoutSubviews {
     
     [_phoneTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mas_topLayoutGuide).offset(80);
-        make.left.equalTo(self.view.mas_left).offset(92);
-        make.right.equalTo(self.view.mas_right).offset(-92);
+        make.top.equalTo(self.mas_topLayoutGuide).offset(70);
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.width.equalTo(self.view.mas_width).multipliedBy(0.6);
     }];
     
     
     [_authCodeButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_phoneTextField.mas_bottom).offset(10);
-        make.right.equalTo(self.view.mas_right).offset(-92);
+        make.right.equalTo(_phoneTextField.mas_right);
+        make.width.equalTo(_phoneTextField.mas_width).multipliedBy(0.45);
     }];
     
     [_authCodeTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_authCodeButton.mas_bottom).offset(40);
-        make.left.equalTo(self.view.mas_left).offset(92);
-        make.right.equalTo(self.view.mas_right).offset(-92);
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.width.equalTo(self.view.mas_width).multipliedBy(0.6);
     }];
     
     [_passwordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_authCodeTextField.mas_bottom).offset(15);
-        make.left.equalTo(self.view.mas_left).offset(92);
-        make.right.equalTo(self.view.mas_right).offset(-92);
+        make.top.equalTo(_authCodeTextField.mas_bottom).offset(30);
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.width.equalTo(self.view.mas_width).multipliedBy(0.6);
+    }];
+    
+    [_secondPasswordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_passwordTextField.mas_bottom).offset(15);
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.width.equalTo(self.view.mas_width).multipliedBy(0.6);
     }];
     
     [_registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_passwordTextField.mas_bottom).offset(70);
+        make.top.equalTo(_secondPasswordTextField.mas_bottom).offset(70);
         make.centerX.equalTo(self.view.mas_centerX);
+        make.width.equalTo(self.view.mas_width).multipliedBy(0.7);
     }];
+
 }
 
 
@@ -167,19 +189,28 @@
         if ([responseObject[@"success"] boolValue] == 1) {
             [SVProgressHUD showSuccessWithStatus:@"注册成功"];
             
+            
+            // id 591d6a64791fc02031b0fc6c
+            //    18603822757
+//            NSLog(@"%@", [responseObject[@"data"] valueForKey:@"id"]);
             // 保存id
             [[NSUserDefaults standardUserDefaults] setValue:responseObject[@"id"] forKey:@"id"];
             
+            [self.navigationController popViewControllerAnimated:YES];
             
         } else {
             [SVProgressHUD showErrorWithStatus:@"已经注册, 请直接登录"];
             [self.navigationController popViewControllerAnimated:YES];
         }
-        NSLog(@"%@", responseObject);
+//        NSLog(@"%@", responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
     
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
 }
 
 

@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-@class GMCommodityItem;
+@class GMMerchantItem, GMCommodityItem;
 
 @interface GMMerchantViewController : UIViewController
 
-@property (nonatomic, strong) GMCommodityItem *merchantItem;
+@property (nonatomic, strong) GMMerchantItem *merchantItem;
+
+//@property (nonatomic, strong) GMCommodityItem *commodityItem;
 
 @end

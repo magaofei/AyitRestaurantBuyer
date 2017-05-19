@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // 设置导航栏颜色
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed: 2.0/255.0 green: 152.0/255.0 blue: 254.0/255.0 alpha: 1.0]];
     [[UINavigationBar appearance] setTranslucent:NO];
     

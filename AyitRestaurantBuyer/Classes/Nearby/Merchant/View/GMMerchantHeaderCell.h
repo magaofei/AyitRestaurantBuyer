@@ -15,7 +15,18 @@
 /**
  公告信息
  */
-@property (nonatomic, strong) UILabel *afficheLabel;
+//@property (nonatomic, strong) UILabel *afficheLabel;
 
 @property (nonatomic, strong) UILabel *couponInfoLabel;
+
+/**
+ 商家名称
+ */
+@property (nonatomic, strong) UILabel *merchantNameLabel;
+
+
+/**
+ 商家公告
+ */
+@property (nonatomic, strong) UILabel *merchantAfficheLabel;
 @end

@@ -32,13 +32,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     self.navigationItem.title = @"忘记密码";
     self.view.backgroundColor = [UIColor whiteColor];
     [self initSubviews];
+    
 }
 
 - (void)initSubviews {
+    
     _phoneTextField = [[UITextField alloc] init];
     _phoneTextField.borderStyle = UITextBorderStyleRoundedRect;
     _phoneTextField.placeholder = @"请输入手机号";
@@ -74,8 +76,10 @@
     _submitPasswordButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:_submitPasswordButton];
     [_submitPasswordButton setTitle:@"提交新密码" forState:UIControlStateNormal];
+    
     [_submitPasswordButton setBackgroundColor:[UIColor colorWithRed: 255.0/255.0 green: 120.0/255.0 blue: 102.0/255.0 alpha: 1.0]];
     [_submitPasswordButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_submitPasswordButton addTarget:self action:@selector(submitPassword) forControlEvents:UIControlEventTouchUpInside];
     
     
     [self initLayoutSubviews];
@@ -119,6 +123,10 @@
     }];
 }
 
+
+/**
+ 发送验证码
+ */
 - (void)sendVerificationCode {
     GMHTTPNetworking *manager = [GMHTTPNetworking sharedManager];
     NSDictionary *p = @{
@@ -137,6 +145,22 @@
         }
         
         
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+}
+
+
+/**
+ 忘记密码
+ */
+- (void)submitPassword {
+    GMHTTPNetworking *manager = [GMHTTPNetworking sharedManager];
+    NSDictionary *p = @{
+                        
+                        };
+    [manager POST:@"common/verificationCode/verificationCode/sendVerificationCode" parameters:p progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         

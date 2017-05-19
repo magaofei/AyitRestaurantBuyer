@@ -45,11 +45,21 @@
     _iconImageView = [[UIImageView alloc] init];
     [self addSubview:_iconImageView];
     
-    _afficheLabel = [[UILabel alloc] init];
-    [self addSubview:_afficheLabel];
+    _merchantNameLabel = [[UILabel alloc] init];
+    [self addSubview:_merchantNameLabel];
     
     _couponInfoLabel = [[UILabel alloc] init];
+    _couponInfoLabel.font = [UIFont systemFontOfSize:13];
+    _couponInfoLabel.textColor = [UIColor colorWithRed: 255.0/255.0 green: 171.0/255.0 blue: 10.0/255.0 alpha: 1.0];
     [self addSubview:_couponInfoLabel];
+    
+    
+    
+    _merchantAfficheLabel = [[UILabel alloc] init];
+    _merchantAfficheLabel.font = [UIFont systemFontOfSize:13];
+    _merchantAfficheLabel.numberOfLines = 2;
+    _merchantAfficheLabel.textColor = [UIColor grayColor];
+    [self addSubview:_merchantAfficheLabel];
     
     [self initLayoutSubviews];
 }
@@ -63,17 +73,25 @@
         
     }];
     
-    [_afficheLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_merchantNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_iconImageView.mas_top).offset(5);
+        make.left.equalTo(_iconImageView.mas_right).offset(10);
+        make.right.equalTo(self.mas_right).offset(-10);
+    }];
+    
+    [_merchantAfficheLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_iconImageView.mas_centerY);
-        make.left.equalTo(self.mas_left).offset(10);
-        make.right.equalTo(self.mas_right).offset(-20);
+        make.left.equalTo(_iconImageView.mas_right).offset(10);
+        make.right.equalTo(self.mas_right).offset(-10);
     }];
     
     [_couponInfoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(10);
+        make.left.equalTo(_iconImageView.mas_right).offset(10);
         make.top.equalTo(_iconImageView.mas_bottom).offset(-20);
         make.right.equalTo(self.mas_right).offset(-20);
     }];
+    
+    
 }
 
 @end

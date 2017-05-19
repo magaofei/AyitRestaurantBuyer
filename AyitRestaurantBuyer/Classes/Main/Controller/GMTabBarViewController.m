@@ -39,8 +39,8 @@
     GMNearbyViewController *nearbyVC = [[GMNearbyViewController alloc] init];
     GMNavigationViewController *nearbyNav = [[GMNavigationViewController alloc]
                                          initWithRootViewController:nearbyVC];
-    nearbyNav.tabBarItem.title = @"附近商家";
-    nearbyNav.tabBarItem.image = [UIImage imageNamed:@"nearby"];
+    nearbyNav.tabBarItem.title = @"首页";
+    nearbyNav.tabBarItem.image = [UIImage imageNamed:@"home"];
     
     // 订单管理
     GMOrderManagementTableViewController *orderManagementVC = [[GMOrderManagementTableViewController alloc] init];

@@ -10,6 +10,13 @@
 
 @implementation OrderItem
 
+- (NSMutableArray *)commodityItems {
+    if (!_commodityItems) {
+        _commodityItems = [NSMutableArray array];
+    }
+    return _commodityItems;
+}
+
 
 
 @end
