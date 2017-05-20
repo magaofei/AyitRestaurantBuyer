@@ -32,6 +32,8 @@
 
 @property (nonatomic, strong) NSArray *infoArray;
 
+@property (nonatomic, strong) NSMutableArray *commodityItems;
+
 @end
 
 @implementation GMSubmitOrderViewController
@@ -162,20 +164,16 @@
 //            
 //        }
         
-        NSMutableArray *cells = [NSMutableArray array];
-        for (GMCommodityItem *item in self.submitOrderItem.commodityItems) {
-            
-            UITableViewCell *commodityCell = [[UITableViewCell alloc] init];
-            commodityCell.textLabel.text = [NSString stringWithFormat:@"%@, 数量:%ld", item.commodityName, item.commodityQuantity];
-            commodityCell.detailTextLabel.text = [NSString stringWithFormat:@"¥%ld", item.price];
-            
-            [cells addObject:commodityCell];
-        }
-
-        cell = cells[indexPath.row];
 
         
-//        return cell;
+        GMCommodityItem *commodityItem = self.submitOrderItem.commodityItems[indexPath.row];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@, 数量:%ld", commodityItem.commodityName, commodityItem.commodityQuantity];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"¥%ld", commodityItem.price];
+        
+
+//        cell = self.commodityItems[indexPath.row];
+        
+        return cell;
 
     } else if (indexPath.section == 2) {
         // 总计
@@ -312,56 +310,67 @@
  生成订单
  */
 - (void)generateOrder {
-    GMHTTPNetworking *manager = [GMHTTPNetworking sharedManager];
+    [SVProgressHUD showSuccessWithStatus:@"提交成功"];
     
-    // 遍历当前所有商品, 把商品id和数量拼接
-    NSMutableString *listStr = [NSMutableString string];
-    for (GMCommodityItem *item in self.submitOrderItem.commodityItems) {
-        [listStr appendFormat:@"%@,%ld;", item.id, item.commodityQuantity];
-    }
-    
-    NSRange range = NSMakeRange([listStr length] - 1, 1);
-    [listStr deleteCharactersInRange:range];
-    NSLog(@"%@", listStr);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        // 生成成功后跳转
+        GMPaymentOrderViewController *paymentVC = [[GMPaymentOrderViewController alloc] init];
+        paymentVC.paymentOrderItem = _submitOrderItem;
+        [self.navigationController pushViewController:paymentVC animated:YES];
+    });
     
     
-    NSDictionary *p = @{
-                        @"clientId": [[NSUserDefaults standardUserDefaults] valueForKey:@"id"],
-                        // 商家ID
-                        @"merchantId": self.submitOrderItem.merchantItem.id,
-                        @"list": listStr
-                        
-                        };
-    [manager POST:@"/client/order/order/insert" parameters:p progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        if (!responseObject) {
-            [SVProgressHUD showErrorWithStatus:@"网络错误"];
-            return ;
-        }
-        if ([responseObject[@"success"] boolValue] != YES) {
-            [SVProgressHUD showErrorWithStatus:@"返回错误"];
-            return;
-        } else if ([responseObject[@"success"] boolValue] == YES){
-            [SVProgressHUD showSuccessWithStatus:@"提交成功"];
-            
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                
-                // 生成成功后跳转
-                GMPaymentOrderViewController *paymentVC = [[GMPaymentOrderViewController alloc] init];
-                paymentVC.paymentOrderItem = _submitOrderItem;
-                [self.navigationController pushViewController:paymentVC animated:YES];
-            });
-           
-        }
-        
-        GMSubmitOrderItem *orderItem = [GMSubmitOrderItem yy_modelWithJSON:responseObject[@"data"]];
-        
-        
-        
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-    }];
+//    GMHTTPNetworking *manager = [GMHTTPNetworking sharedManager];
+//
+//    // 遍历当前所有商品, 把商品id和数量拼接
+//    NSMutableString *listStr = [NSMutableString string];
+//    for (GMCommodityItem *item in self.submitOrderItem.commodityItems) {
+//        [listStr appendFormat:@"%@,%ld;", item.id, item.commodityQuantity];
+//    }
+//    
+//    NSRange range = NSMakeRange([listStr length] - 1, 1);
+//    [listStr deleteCharactersInRange:range];
+//    NSLog(@"%@", listStr);
+//    
+//    
+//    NSDictionary *p = @{
+//                        @"clientId": [[NSUserDefaults standardUserDefaults] valueForKey:@"id"],
+//                        // 商家ID
+//                        @"merchantId": self.submitOrderItem.merchantItem.id,
+//                        @"list": listStr
+//                        
+//                        };
+//    [manager POST:@"/client/order/order/insert" parameters:p progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        
+//        if (!responseObject) {
+//            [SVProgressHUD showErrorWithStatus:@"网络错误"];
+//            return ;
+//        }
+//        if ([responseObject[@"success"] boolValue] != YES) {
+//            [SVProgressHUD showErrorWithStatus:@"返回错误"];
+//            return;
+//        } else if ([responseObject[@"success"] boolValue] == YES){
+//            [SVProgressHUD showSuccessWithStatus:@"提交成功"];
+//            
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                
+//                // 生成成功后跳转
+//                GMPaymentOrderViewController *paymentVC = [[GMPaymentOrderViewController alloc] init];
+//                paymentVC.paymentOrderItem = _submitOrderItem;
+//                [self.navigationController pushViewController:paymentVC animated:YES];
+//            });
+//           
+//        }
+//        
+//        GMSubmitOrderItem *orderItem = [GMSubmitOrderItem yy_modelWithJSON:responseObject[@"data"]];
+//        
+//        
+//        
+//        
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        
+//    }];
     
     
     
@@ -385,6 +394,13 @@
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.view endEditing:YES];
+}
+
+- (NSMutableArray *)commodityItems {
+    if (!_commodityItems) {
+        _commodityItems = [NSMutableArray array];
+    }
+    return _commodityItems;
 }
 /*
 #pragma mark - Navigation

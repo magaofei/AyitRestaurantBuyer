@@ -18,4 +18,6 @@
 
 @property (nonatomic, strong) NSString *createTime;
 
+@property (nonatomic, strong) NSString *nickName;
+
 @end
