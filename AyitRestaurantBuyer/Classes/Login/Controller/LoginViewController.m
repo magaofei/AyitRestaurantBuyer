@@ -366,6 +366,9 @@
             
             [[NSUserDefaults standardUserDefaults] setValue:clientItem.id forKey:@"id"];
             [[NSUserDefaults standardUserDefaults] setValue:clientItem.phone forKey:@"phone"];
+            
+//            [self getMerchantId:<#(NSString *)#>]
+            
 
 //            [[NSUserDefaults standardUserDefaults] setObject:[responseObject yy_modelToJSONObject] forKey:@"clientItem"];
             result = YES;
@@ -433,13 +436,46 @@
     } completion:^(BOOL finished) {//当动画完成
         [_loadingIndicatorView stopAnimating];  //结束动画
         [_loginButton setEnabled:YES];
-        [self cancelLogin]; //当动画完成调用
+//        [self cancelLogin]; //当动画完成调用
     }];
     
     
     
     
 }
+
+///**
+// 获取客户ID
+// */
+//- (void)getCommodityId:(NSString *)commodityId {
+//    GMHTTPNetworking *manager = [GMHTTPNetworking sharedManager];
+//    NSDictionary *p = @{
+//                        @"userId": userId
+//                        };
+//    [manager POST:@"/server/merchant/merchant/findByUserId" parameters:p progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        if (!responseObject) {
+//            return ;
+//        }
+//        
+//        if ([responseObject[@"success"] boolValue] != YES) {
+//            return ;
+//        }
+//        
+//        GMMerchantItem *merchantItem = [GMMerchantItem yy_modelWithJSON:responseObject[@"data"]];
+//        
+//        // 存商家ID
+//        [[NSUserDefaults standardUserDefaults] setValue:merchantItem.id forKey:@"merchantId"];
+//        
+//        //验证成功
+//        [self showMainTabBarViewController];//跳转
+//        _tipLabel.hidden = YES;
+//        _tipImageView.hidden = YES;
+//        
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        
+//    }];
+//}
+
 
 
 

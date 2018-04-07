@@ -15,6 +15,8 @@
 		221714011ECEE72A004E5D96 /* GoodsManagementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 221713FD1ECEE72A004E5D96 /* GoodsManagementTableViewCell.m */; };
 		221714021ECEE72A004E5D96 /* GoodsManagementTableViewCellDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221713FE1ECEE72A004E5D96 /* GoodsManagementTableViewCellDemo.xib */; };
 		221714031ECEE72A004E5D96 /* OrderDetailHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 221714001ECEE72A004E5D96 /* OrderDetailHeaderCell.m */; };
+		221714111ED0949F004E5D96 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2217140E1ED0949F004E5D96 /* AddressViewController.m */; };
+		221714121ED0949F004E5D96 /* ContactInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221714101ED0949F004E5D96 /* ContactInformationViewController.m */; };
 		222EE33F1EA778DF001F707B /* GMNearbySellerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 222EE33E1EA778DF001F707B /* GMNearbySellerTableViewCell.m */; };
 		222FC7071EAB450400DE91EB /* GMCarouselCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC7061EAB450400DE91EB /* GMCarouselCell.m */; };
 		222FC7101EAB4CBE00DE91EB /* GMMerchantItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 222FC70F1EAB4CBE00DE91EB /* GMMerchantItem.m */; };
@@ -97,6 +99,10 @@
 		221713FE1ECEE72A004E5D96 /* GoodsManagementTableViewCellDemo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GoodsManagementTableViewCellDemo.xib; path = AyitRestaurantBuyer/Classes/OrderManagement/OrderDetail/View/GoodsManagementTableViewCellDemo.xib; sourceTree = SOURCE_ROOT; };
 		221713FF1ECEE72A004E5D96 /* OrderDetailHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderDetailHeaderCell.h; path = AyitRestaurantBuyer/Classes/OrderManagement/OrderDetail/View/OrderDetailHeaderCell.h; sourceTree = SOURCE_ROOT; };
 		221714001ECEE72A004E5D96 /* OrderDetailHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderDetailHeaderCell.m; path = AyitRestaurantBuyer/Classes/OrderManagement/OrderDetail/View/OrderDetailHeaderCell.m; sourceTree = SOURCE_ROOT; };
+		2217140D1ED0949F004E5D96 /* AddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddressViewController.h; path = Classes/My/View/AddressViewController.h; sourceTree = "<group>"; };
+		2217140E1ED0949F004E5D96 /* AddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddressViewController.m; path = Classes/My/View/AddressViewController.m; sourceTree = "<group>"; };
+		2217140F1ED0949F004E5D96 /* ContactInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactInformationViewController.h; path = Classes/My/View/ContactInformationViewController.h; sourceTree = "<group>"; };
+		221714101ED0949F004E5D96 /* ContactInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactInformationViewController.m; path = Classes/My/View/ContactInformationViewController.m; sourceTree = "<group>"; };
 		222EE33D1EA778DF001F707B /* GMNearbySellerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMNearbySellerTableViewCell.h; path = Classes/Nearby/View/GMNearbySellerTableViewCell.h; sourceTree = "<group>"; };
 		222EE33E1EA778DF001F707B /* GMNearbySellerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMNearbySellerTableViewCell.m; path = Classes/Nearby/View/GMNearbySellerTableViewCell.m; sourceTree = "<group>"; };
 		222FC7051EAB450400DE91EB /* GMCarouselCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMCarouselCell.h; path = Classes/Home/View/GMCarouselCell.h; sourceTree = "<group>"; };
@@ -603,6 +609,10 @@
 		227C01B41E9CDFA300E05BF9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2217140D1ED0949F004E5D96 /* AddressViewController.h */,
+				2217140E1ED0949F004E5D96 /* AddressViewController.m */,
+				2217140F1ED0949F004E5D96 /* ContactInformationViewController.h */,
+				221714101ED0949F004E5D96 /* ContactInformationViewController.m */,
 				222FC7231EAB86D900DE91EB /* GMMyHeadTableViewCell.h */,
 				222FC7241EAB86D900DE91EB /* GMMyHeadTableViewCell.m */,
 				222FC7261EAB88BB00DE91EB /* MyHeadView.xib */,
@@ -1101,6 +1111,8 @@
 				222FC7251EAB86D900DE91EB /* GMMyHeadTableViewCell.m in Sources */,
 				228868891EA70B4F00564E0F /* LoginViewController.m in Sources */,
 				22373F151EC0652000CD78E2 /* GMMerchantBottomView.m in Sources */,
+				221714111ED0949F004E5D96 /* AddressViewController.m in Sources */,
+				221714121ED0949F004E5D96 /* ContactInformationViewController.m in Sources */,
 				22373F071EC0386300CD78E2 /* GMSubmitDetailInfoViewController.m in Sources */,
 				22373F0F1EC05BB600CD78E2 /* GMMerchantHeaderCell.m in Sources */,
 				221713EA1ECE8E42004E5D96 /* GMSubmitOrderRemarkCell.m in Sources */,

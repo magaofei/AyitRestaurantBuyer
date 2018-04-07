@@ -11,6 +11,11 @@
 #import "GMMyHeadTableViewCell.h"
 #import "LoginViewController.h"
 #import "GMNavigationViewController.h"
+#import "GMHTTPNetworking.h"
+#import <YYModel/YYModel.h>
+
+#import "AddressViewController.h"
+#import "ContactInformationViewController.h"
 
 #import <SVProgressHUD/SVProgressHUD.h>
 
@@ -21,6 +26,8 @@
 @property (nonatomic, strong) UIButton *exitButton;
 
 @property (nonatomic, strong) NSArray *listArr;
+
+@property (nonatomic, copy) NSArray *dataArr;
 
 @end
 
@@ -38,6 +45,7 @@ static NSString *myHeadCell = @"myHeadCell";
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.listArr = @[@"联系方式", @"地址"];
+    self.dataArr = @[@"18603822757", @"校园第一餐厅"];
     
     [self initSubviews];
     
@@ -141,11 +149,36 @@ static NSString *myHeadCell = @"myHeadCell";
             
         }
         
+        
         // 判断有没有登录
-        if ([[NSUserDefaults standardUserDefaults] valueForKey:@"id"]) {
-            cell.nameLabel.text = @"李俊龙";
-        } else {
+        NSString *userId = [[NSUserDefaults standardUserDefaults] valueForKey:@"id"];
+        if (!userId) {
             cell.nameLabel.text = @"登录/注册";
+            cell.phoneLabel.text = @"";
+        } else {
+            cell.nameLabel.text = @"李俊龙";
+            cell.phoneLabel.text = @"18603822757";
+//            GMHTTPNetworking *manager = [GMHTTPNetworking sharedManager];
+//            NSDictionary *p = @{
+//                                @"id": userId
+//                                };
+//            [manager POST:@"" parameters:p progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//                if (!responseObject) {
+//                    [SVProgressHUD showErrorWithStatus:@"网络错误"];
+//                    return ;
+//                }
+//                if ([responseObject[@"success"] boolValue] != YES) {
+//                    [SVProgressHUD showErrorWithStatus:@"返回错误"];
+//                    return;
+//                }
+//                
+//                NSDictionary *userInfo = [NSDictionary yy_modelWithJSON:responseObject[@"data"]];
+//                
+//                
+//                
+//            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//                
+//            }];
         }
         
         cell.iconView.image = [UIImage imageNamed:@"my"];
@@ -158,6 +191,7 @@ static NSString *myHeadCell = @"myHeadCell";
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
             
         }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.text = self.listArr[indexPath.row];
         return cell;
     }
@@ -191,7 +225,20 @@ static NSString *myHeadCell = @"myHeadCell";
 //        [self.navigationController pushViewController:loginVC animated:YES];
         [self presentViewController:loginNav animated:YES completion:nil];
        
+    } else if (indexPath.section == 1) {
+        ContactInformationViewController *contactVC = [[ContactInformationViewController alloc] init];
+        contactVC.phoneStr = self.dataArr[indexPath.section];
+        [self.navigationController pushViewController:contactVC animated:YES];
+        
+    } else if (indexPath.section == 2) {
+        AddressViewController *addressVC = [[AddressViewController alloc] init];
+        addressVC.addressStr = self.dataArr[indexPath.section];
+        [self.navigationController pushViewController:addressVC animated:YES];
+        
+        
     }
+    
+    
     
     
 }
@@ -206,11 +253,12 @@ static NSString *myHeadCell = @"myHeadCell";
     UIAlertAction *backLoginAction = [UIAlertAction actionWithTitle:@"确定退出" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         // 清理登录信息
-        if ([[NSUserDefaults standardUserDefaults] valueForKey:@"id"]) {
-            [[[NSUserDefaults standardUserDefaults] valueForKey:@"id"] isEqualToString:@""];
-        }
-        
+//        if ([[NSUserDefaults standardUserDefaults] valueForKey:@"id"]) {
+//            [[[NSUserDefaults standardUserDefaults] valueForKey:@"id"] isEqualToString:@""];
+//        }
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"id"];
         [SVProgressHUD showSuccessWithStatus:@"已退出"];
+        [self.infoTableView reloadData];
         
         
     }];
@@ -219,6 +267,7 @@ static NSString *myHeadCell = @"myHeadCell";
     [alert addAction:backLoginAction];
     
     [self presentViewController:alert animated:YES completion:nil];
+    
     
     
     

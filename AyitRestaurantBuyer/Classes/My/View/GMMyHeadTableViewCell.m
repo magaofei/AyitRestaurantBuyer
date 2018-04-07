@@ -49,6 +49,9 @@
     _nameLabel = [[UILabel alloc] init];
     [self addSubview:_nameLabel];
     
+    _phoneLabel = [[UILabel alloc] init];
+    [self addSubview:_phoneLabel];
+    
     [self initLayoutSubviews];
 }
 
@@ -62,6 +65,11 @@
     
     [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_iconView.mas_right).offset(20);
+        make.centerY.equalTo(_iconView.mas_centerY);
+    }];
+    
+    [_phoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.mas_right).offset(-10);
         make.centerY.equalTo(_iconView.mas_centerY);
     }];
 }
